@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#3e97df] text-white py-10 mt-20">
+    <footer className="bg-[#3e97df] text-white py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand Section */}
         <div>
