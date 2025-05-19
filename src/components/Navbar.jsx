@@ -34,7 +34,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-[#1a80e5fb] py-2 px-3 rounded-xl font-semibold text-white"
+                ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
             } hidden md:block`
           }
