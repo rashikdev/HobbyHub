@@ -1,7 +1,23 @@
-import React from "react";
+import React, { use } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../context/AuthProvider";
+import toast from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router";
 
 const GoogleBtn = ({ title }) => {
+  const { signInWithGoogle } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        toast.success("SignIn Successfully");
+        navigate(location.state || "/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div>
       <div className="flex items-center py-4 space-x-1">
@@ -11,6 +27,7 @@ const GoogleBtn = ({ title }) => {
       </div>
       <div className="flex justify-center">
         <button
+          onClick={handleGoogleSignIn}
           type="button"
           className="flex items-center justify-center w-full p-3 gap-4 border rounded-md border-gray-600 cursor-pointer mb-5 hover:bg-gray-600 transition-all duration-300"
         >

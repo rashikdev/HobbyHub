@@ -8,7 +8,6 @@ import { IoMdLogOut } from "react-icons/io";
 import toast from "react-hot-toast";
 const Navbar = () => {
   const { user, logoutUser } = use(AuthContext);
-  console.log(user);
   const handleLogout = () => {
     toast.error("Logout Successfully");
     logoutUser();
@@ -150,7 +149,9 @@ const Navbar = () => {
           <img
             title={user?.displayName}
             className="md:w-10 md:h-10 w-8 h-8 cursor-pointer rounded-full"
-            src={user?.photoURL || userLogo}
+            src={`${
+              user ? (user.photoURL ? user.photoURL : userLogo) : userLogo
+            }`}
             alt=""
           />
         </div>
