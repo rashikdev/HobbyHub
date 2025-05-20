@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router"; // Optional if using React Router
+import { Link, useNavigate } from "react-router"; // Optional if using React Router
 import GoogleBtn from "../components/GoogleBtn";
 import { AuthContext } from "../context/AuthProvider";
 import toast from "react-hot-toast";
@@ -8,7 +8,9 @@ import { TbEye, TbEyeClosed } from "react-icons/tb";
 const Register = () => {
   const { createUser, user, updateUser, setUser } = use(AuthContext);
   const [show, setShow] = useState(false);
-  console.log(user);
+
+  const navigate = useNavigate();
+  // console.log(user);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;

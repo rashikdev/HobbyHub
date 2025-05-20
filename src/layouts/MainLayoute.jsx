@@ -12,7 +12,6 @@ const MainLayoute = () => {
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
-      <Toaster />
     </div>
   );
 };

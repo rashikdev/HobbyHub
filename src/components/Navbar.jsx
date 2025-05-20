@@ -5,9 +5,14 @@ import { CgMenuRightAlt } from "react-icons/cg";
 import userLogo from "../assets/user.png";
 import { AuthContext } from "../context/AuthProvider";
 import { IoMdLogOut } from "react-icons/io";
+import toast from "react-hot-toast";
 const Navbar = () => {
-  const { user } = use(AuthContext);
+  const { user, logoutUser } = use(AuthContext);
   console.log(user);
+  const handleLogout = () => {
+    toast.error("Logout Successfully");
+    logoutUser();
+  };
   return (
     <div className="bg-base-300/60 backdrop-blur-md py-4 z-50 px-5 flex justify-between items-center shadow-md font-bold sticky top-0">
       {/* nav items  */}
@@ -88,6 +93,7 @@ const Navbar = () => {
           <NavLink to="/login">
             {user ? (
               <button
+                onClick={handleLogout}
                 title="Logout"
                 className="flex text-red-500 cursor-pointer items-center gap-2"
               >
