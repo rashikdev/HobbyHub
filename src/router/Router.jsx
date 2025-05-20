@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import LoadingPage from "../components/LoadingPage";
 import PrivateRoute from "./PrivateRoute";
+import GroupDetails from "../pages/GroupDetails";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,16 @@ export const router = createBrowserRouter([
       {
         path: "/all-groups",
         Component: AllGroup,
+      },
+      {
+        path: "/group-details/:id",
+        loader: () => fetch("/groupsData.json"),
+        hydrateFallbackElement: <LoadingPage></LoadingPage>,
+        element: (
+          <PrivateRoute>
+            <GroupDetails></GroupDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/create-group",

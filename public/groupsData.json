@@ -6,7 +6,8 @@
     "nextEvent": "8/12",
     "startDate": "2025-08-10",
     "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
-    "category": "featuredGroup"
+    "category": "featuredGroup",
+    "description": "Explore the Bay Area's most scenic hiking trails every weekend with fellow enthusiasts."
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "nextEvent": "8/20",
     "startDate": "2025-08-22",
     "image": "https://i.postimg.cc/NGy6XhDx/2150062128.jpg",
-    "category": "featuredGroup"
+    "category": "featuredGroup",
+    "description": "Join lively discussions on a wide range of books with readers from all walks of life."
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "nextEvent": "8/25",
     "startDate": "2025-08-26",
     "image": "https://i.postimg.cc/bNhZw4Br/142.jpg",
-    "category": "featuredGroup"
+    "category": "featuredGroup",
+    "description": "Capture moments and improve your photography skills every weekend with like-minded creatives."
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "nextEvent": "8/18",
     "startDate": "2025-08-01",
     "image": "https://i.postimg.cc/44bJByW4/2714.jpg",
-    "category": "featuredGroup"
+    "category": "featuredGroup",
+    "description": "Unleash your creativity with others through collaborative painting sessions and art challenges."
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "nextEvent": "8/22",
     "startDate": "2025-08-23",
     "image": "https://i.postimg.cc/J4YC2kZ8/2151847302.jpg",
-    "category": "featuredGroup"
+    "category": "featuredGroup",
+    "description": "Join runners across the city for weekly group runs and fitness challenges."
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "nextEvent": "8/30",
     "startDate": "2025-08-29",
     "image": "https://i.postimg.cc/GhH59ST0/20510.jpg",
-    "category": "featuredGroup"
+    "category": "featuredGroup",
+    "description": "Discover flavors and share cooking experiences in our evening culinary sessions."
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "members": "800+ members",
     "nextEvent": "6/15",
     "startDate": "2025-06-01",
-    "category": "newestGroup"
+    "category": "newestGroup",
+    "description": "Hike and capture breathtaking mountain landscapes with fellow photography lovers."
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "members": "1,200+ members",
     "nextEvent": "6/20",
     "startDate": "2025-06-10",
-    "category": "newestGroup"
+    "category": "newestGroup",
+    "description": "Explore the city through sketching meetups and develop your artistic vision."
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "members": "650+ members",
     "nextEvent": "6/18",
     "startDate": "2025-06-05",
-    "category": "newestGroup"
+    "category": "newestGroup",
+    "description": "Perfect for beginners looking to start hiking and connect with friendly nature lovers."
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "members": "500+ members",
     "nextEvent": "6/22",
     "startDate": "2025-06-12",
-    "category": "newestGroup"
+    "category": "newestGroup",
+    "description": "Help preserve marine life by joining our regular beach and coastline cleanup events."
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "members": "950+ members",
     "nextEvent": "6/25",
     "startDate": "2025-06-15",
-    "category": "newestGroup"
+    "category": "newestGroup",
+    "description": "Learn and share drone videography techniques through exciting flight meetups."
   },
   {
     "id": 12,
@@ -105,6 +116,7 @@
     "members": "1,100+ members",
     "nextEvent": "6/30",
     "startDate": "2025-06-20",
-    "category": "newestGroup"
+    "category": "newestGroup",
+    "description": "Cycle the city's best routes every weekend and bond over post-ride snacks and chats."
   }
 ]

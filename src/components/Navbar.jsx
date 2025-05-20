@@ -76,7 +76,9 @@ const Navbar = () => {
         </div>
         <NavLink className="flex items-center" to="/">
           <img className="md:w-10 w-8 rounded-full" src={logo} alt="" />
-          <h2 className="font-bold text-2xl ml-2 ">HobbyHub</h2>
+          <h2 className="font-bold text-2xl ml-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+            HobbyHub
+          </h2>
         </NavLink>
       </div>
       <div className="flex items-center gap-7 text-[16px]">
@@ -138,12 +140,23 @@ const Navbar = () => {
               <button
                 onClick={handleLogout}
                 title="Logout"
-                className="flex text-red-500 cursor-pointer items-center gap-2"
+                className="flex text-red-500 cursor-pointer items-center gap-2 hover:bg-red-500 hover:text-white py-2 px-3 rounded-lg transition-all duration-300"
               >
                 <IoMdLogOut size={20} />
               </button>
             ) : (
-              <button>Login</button>
+              <button className="flex items-center">
+                <a
+                  className="group relative inline-block overflow-hidden bg-[#1fbb10ea] rounded-lg px-4 py-1.5 outline-none"
+                  href="#"
+                >
+                  <span className="absolute inset-y-0 left-0 w-0 bg-indigo-500 transition-all group-hover:w-full"></span>
+
+                  <span className="relative text-sm font-medium text-white transition-colors group-hover:text-white">
+                    Login
+                  </span>
+                </a>
+              </button>
             )}
           </NavLink>
           <img

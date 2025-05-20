@@ -11,7 +11,9 @@ const Footer = () => {
         <div>
           <NavLink className="flex items-center" to="/">
             <img className="md:w-10 w-8 rounded-full" src={logo} alt="" />
-            <h2 className="font-bold text-2xl ml-2 ">HobbyHub</h2>
+            <h2 className="font-bold text-2xl ml-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+              HobbyHub
+            </h2>
           </NavLink>
           <p className="text-sm">
             Discover, join, or create hobby-based groups. Build your community
