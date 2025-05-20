@@ -15,6 +15,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+        loader: () => fetch("/groupsData.json"),
       },
       {
         path: "/login",

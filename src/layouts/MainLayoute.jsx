@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { Outlet } from "react-router";
 import Footer from "../components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const MainLayoute = () => {
   return (
@@ -11,6 +12,7 @@ const MainLayoute = () => {
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
+      <Toaster />
     </div>
   );
 };

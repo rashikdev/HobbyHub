@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Hiking in the Bay Area",
+    "members": "1,000+",
+    "nextEvent": "8/12",
+    "startDate": "2025-08-10",
+    "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
+    "category": "featuredGroup"
+  },
+  {
+    "id": 2,
+    "name": "Downtown Book Club",
+    "members": "500+",
+    "nextEvent": "8/20",
+    "startDate": "2025-08-22",
+    "image": "https://i.postimg.cc/NGy6XhDx/2150062128.jpg",
+    "category": "featuredGroup"
+  },
+  {
+    "id": 3,
+    "name": "Weekend Photography",
+    "members": "850+",
+    "nextEvent": "8/25",
+    "startDate": "2025-08-26",
+    "image": "https://i.postimg.cc/bNhZw4Br/142.jpg",
+    "category": "featuredGroup"
+  },
+  {
+    "id": 4,
+    "name": "Creative Painting Circle",
+    "members": "300+",
+    "nextEvent": "8/18",
+    "startDate": "2025-08-01",
+    "image": "https://i.postimg.cc/44bJByW4/2714.jpg",
+    "category": "featuredGroup"
+  },
+  {
+    "id": 5,
+    "name": "City Runners Group",
+    "members": "1,200+",
+    "nextEvent": "8/22",
+    "startDate": "2025-08-23",
+    "image": "https://i.postimg.cc/J4YC2kZ8/2151847302.jpg",
+    "category": "featuredGroup"
+  },
+  {
+    "id": 6,
+    "name": "Culinary Club Nights",
+    "members": "600+",
+    "nextEvent": "8/30",
+    "startDate": "2025-08-29",
+    "image": "https://i.postimg.cc/GhH59ST0/20510.jpg",
+    "category": "featuredGroup"
+  },
+  {
+    "id": 7,
+    "name": "Mountain Photography Club",
+    "image": "https://i.postimg.cc/MKfXtqf9/4697.jpg",
+    "members": "800+ members",
+    "nextEvent": "6/15",
+    "startDate": "2025-06-01",
+    "category": "newestGroup"
+  },
+  {
+    "id": 8,
+    "name": "Urban Sketching Enthusiasts",
+    "image": "https://i.postimg.cc/vTsMzFJN/Screenshot-2025-05-20-121745.png",
+    "members": "1,200+ members",
+    "nextEvent": "6/20",
+    "startDate": "2025-06-10",
+    "category": "newestGroup"
+  },
+  {
+    "id": 9,
+    "name": "Beginner Hiking Club",
+    "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
+    "members": "650+ members",
+    "nextEvent": "6/18",
+    "startDate": "2025-06-05",
+    "category": "newestGroup"
+  },
+  {
+    "id": 10,
+    "name": "Coastal Cleanup Volunteers",
+    "image": "https://i.postimg.cc/9Qt8k4Db/2147827006.jpg",
+    "members": "500+ members",
+    "nextEvent": "6/22",
+    "startDate": "2025-06-12",
+    "category": "newestGroup"
+  },
+  {
+    "id": 11,
+    "name": "Drone Videography",
+    "image": "https://i.postimg.cc/9QpbpvkN/260.jpg",
+    "members": "950+ members",
+    "nextEvent": "6/25",
+    "startDate": "2025-06-15",
+    "category": "newestGroup"
+  },
+  {
+    "id": 12,
+    "name": "Weekend Cyclists Meetup",
+    "image": "https://i.postimg.cc/SxJRT91F/Screenshot-2025-05-20-122805.png",
+    "members": "1,100+ members",
+    "nextEvent": "6/30",
+    "startDate": "2025-06-20",
+    "category": "newestGroup"
+  }
+]
