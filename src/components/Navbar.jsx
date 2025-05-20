@@ -25,10 +25,54 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-40 py-4 shadow space-y-3 font-medium"
           >
-            <NavLink>Home</NavLink>
-            <NavLink>All Groups</NavLink>
-            <NavLink>Create Group</NavLink>
-            <NavLink>My Groups</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "text-red-500 underline underline-offset-8 font-semibold"
+                    : ""
+                }`
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "text-red-500 underline underline-offset-8 font-semibold"
+                    : ""
+                }`
+              }
+              to="/all-groups"
+            >
+              All Groups
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "text-red-500 underline underline-offset-8 font-semibold"
+                    : ""
+                }`
+              }
+              to="/create-group"
+            >
+              Create Group
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "text-red-500 underline underline-offset-8 font-semibold"
+                    : ""
+                }`
+              }
+              to="/my-groups"
+            >
+              My Groups
+            </NavLink>
           </ul>
         </div>
         <NavLink className="flex items-center" to="/">
