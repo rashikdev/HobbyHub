@@ -1,14 +1,28 @@
 import React, { use, useState } from "react";
 import GoogleBtn from "../components/GoogleBtn";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import { TbEye, TbEyeClosed } from "react-icons/tb";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [show, setShow] = useState(false);
+  const { loginWithEmail } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add login logic here
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    loginWithEmail(email, password)
+      .then((result) => {
+        toast.success("Login Successfully");
+        navigate(location.state || "/");
+      })
+      .catch((error) => {
+        toast.error("Invalid email or password");
+      });
   };
 
   return (
