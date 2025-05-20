@@ -1,9 +1,13 @@
-import React from "react";
+import React, { use } from "react";
 import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { CgMenuRightAlt } from "react-icons/cg";
-import user from "../assets/user.png";
+import userLogo from "../assets/user.png";
+import { AuthContext } from "../context/AuthProvider";
+import { IoMdLogOut } from "react-icons/io";
 const Navbar = () => {
+  const { user } = use(AuthContext);
+  console.log(user);
   return (
     <div className="bg-base-300/60 backdrop-blur-md py-4 z-50 px-5 flex justify-between items-center shadow-md font-bold sticky top-0">
       {/* nav items  */}
@@ -82,12 +86,21 @@ const Navbar = () => {
         </NavLink>
         <div className="flex items-center gap-4">
           <NavLink to="/login">
-            <button>login</button>
+            {user ? (
+              <button
+                title="Logout"
+                className="flex text-red-500 cursor-pointer items-center gap-2"
+              >
+                <IoMdLogOut size={20} />
+              </button>
+            ) : (
+              <button>Login</button>
+            )}
           </NavLink>
           <img
             title={user?.displayName}
             className="md:w-10 md:h-10 w-8 h-8 cursor-pointer rounded-full"
-            src={user}
+            src={user?.photoURL || userLogo}
             alt=""
           />
         </div>

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { use, useState } from "react";
 import GoogleBtn from "../components/GoogleBtn";
 import { Link } from "react-router";
+import { AuthContext } from "../context/AuthProvider";
+import { TbEye, TbEyeClosed } from "react-icons/tb";
 
 const Login = () => {
+  const [show, setShow] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add login logic here
   };
-
 
   return (
     <div className="min-h-[calc(100vh-100px)] bg-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -41,11 +43,18 @@ const Login = () => {
               <input
                 id="password"
                 name="password"
-                type="password"
+                type={show ? "text" : "password"}
                 required
                 placeholder="Password"
                 className="peer placeholder-transparent w-full h-12 px-3 border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-500"
               />
+              <button
+                type="button"
+                onClick={() => setShow(!show)}
+                className="absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer"
+              >
+                {show ? <TbEyeClosed size={23} /> : <TbEye size={23} />}
+              </button>
               <label
                 htmlFor="password"
                 className="absolute left-3 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-sm"
@@ -66,12 +75,12 @@ const Login = () => {
 
           <GoogleBtn title="Login with Google" />
           <p className="mt-6 text-center text-sm text-gray-600">
-            Already have an account?{" "}
+            Don't have an account?{" "}
             <Link
               to="/register"
               className="text-indigo-500 hover:text-indigo-700 font-medium"
             >
-              Login
+              Register
             </Link>
           </p>
         </div>

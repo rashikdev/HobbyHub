@@ -1,8 +1,51 @@
-import React from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router"; // Optional if using React Router
 import GoogleBtn from "../components/GoogleBtn";
+import { AuthContext } from "../context/AuthProvider";
+import toast from "react-hot-toast";
+import { TbEye, TbEyeClosed } from "react-icons/tb";
 
 const Register = () => {
+  const { createUser, user, updateUser, setUser } = use(AuthContext);
+  const [show, setShow] = useState(false);
+  console.log(user);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo_url = form.photo_url.value;
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain at least one uppercase letter");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      toast.error("Password must contain at least one lowercase letter");
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        updateUser({
+          displayName: name,
+          photoURL: photo_url,
+        })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo_url });
+            toast.success("Register Successfully");
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   return (
     <div className="min-h-[calc(100vh-100px)] bg-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -14,7 +57,7 @@ const Register = () => {
             Register
           </h2>
 
-          <form className="space-y-6">
+          <form onSubmit={handleRegister} className="space-y-6">
             <div className="relative">
               <input
                 id="name"
@@ -52,7 +95,7 @@ const Register = () => {
             <div className="relative">
               <input
                 id="photo"
-                name="photo"
+                name="photo_url"
                 type="url"
                 required
                 placeholder="Photo URL"
@@ -70,11 +113,18 @@ const Register = () => {
               <input
                 id="password"
                 name="password"
-                type="password"
+                type={show ? "text" : "password"}
                 required
                 placeholder="Password"
                 className="peer placeholder-transparent w-full h-12 px-3 border-b-2 border-gray-300 focus:outline-none focus:border-indigo-500 text-gray-900"
               />
+              <button
+                type="button"
+                onClick={() => setShow(!show)}
+                className="absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer"
+              >
+                {show ? <TbEyeClosed size={23} /> : <TbEye size={23} />}
+              </button>
               <label
                 htmlFor="password"
                 className="absolute left-3 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-sm"
