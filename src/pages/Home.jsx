@@ -3,6 +3,7 @@ import Slider from "../components/Slider";
 import { useLoaderData } from "react-router";
 import FeaturedGroup from "../components/FeaturedGroup";
 import NewestGroup from "../components/NewestGroup";
+import TestimonialsSection from "../components/TestimonialsSection";
 
 const Home = () => {
   const allGroups = useLoaderData();
@@ -20,6 +21,7 @@ const Home = () => {
       <Slider />
       <FeaturedGroup groups={featuredGroups} />
       <NewestGroup groups={newestGroups} />
+      <TestimonialsSection></TestimonialsSection>
     </div>
   );
 };
