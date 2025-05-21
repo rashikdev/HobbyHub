@@ -7,6 +7,8 @@ import { AuthContext } from "../context/AuthProvider";
 import { IoMdLogOut } from "react-icons/io";
 import toast from "react-hot-toast";
 import ThemeToggle from "./ThemeToggle";
+import { Tooltip } from "react-tooltip";
+
 const Navbar = () => {
   const { user, logoutUser } = use(AuthContext);
   const handleLogout = () => {
@@ -77,7 +79,7 @@ const Navbar = () => {
         </div>
         <NavLink className="flex items-center" to="/">
           <img className="md:w-10 w-8 rounded-full" src={logo} alt="" />
-          <h2 className="font-bold text-2xl ml-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          <h2 className="font-bold text-2xl md:ml-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
             HobbyHub
           </h2>
         </NavLink>
@@ -135,10 +137,14 @@ const Navbar = () => {
         >
           My Groups
         </NavLink>
-        <ThemeToggle></ThemeToggle>
-        <div className="flex items-center gap-4">
+        <ThemeToggle
+          data-tooltip-id="theme-tooltip"
+          data-tooltip-content="Change Theme"
+        ></ThemeToggle>
+        <div className="flex items-center gap-2 md:gap-4">
           <img
-            title={user?.displayName}
+            data-tooltip-id="user-tooltip"
+            data-tooltip-content={user?.displayName}
             className="md:w-10 md:h-10 w-8 h-8 cursor-pointer rounded-full"
             src={`${
               user ? (user.photoURL ? user.photoURL : userLogo) : userLogo
@@ -149,16 +155,20 @@ const Navbar = () => {
             {user ? (
               <button
                 onClick={handleLogout}
-                title="Logout"
                 className="flex text-red-500 cursor-pointer items-center gap-2 hover:bg-red-500 hover:text-white py-1 px-2 rounded-lg transition-all duration-300"
+                data-tooltip-id="logout-tooltip"
+                data-tooltip-content="Logout"
               >
                 <IoMdLogOut size={25} />
               </button>
             ) : (
-              <button className="flex items-center">
+              <button
+                className="flex items-center"
+                data-tooltip-id="login-tooltip"
+                data-tooltip-content="Login to your account"
+              >
                 <p className="group relative inline-block overflow-hidden bg-[#1fbb10ea] rounded-lg px-4 py-1.5 outline-none">
                   <span className="absolute inset-y-0 left-0 w-0 bg-indigo-500 transition-all group-hover:w-full"></span>
-
                   <span className="flex relative text-sm font-medium md:p-1 text-white transition-colors group-hover:text-white">
                     Login
                   </span>
@@ -168,6 +178,12 @@ const Navbar = () => {
           </NavLink>
         </div>
       </div>
+
+      {/* ✅ Tooltips */}
+      <Tooltip id="logout-tooltip" place="bottom" />
+      <Tooltip id="login-tooltip" place="bottom" />
+      <Tooltip id="theme-tooltip" place="bottom" />
+      <Tooltip id="user-tooltip" place="bottom" />
     </div>
   );
 };

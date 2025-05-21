@@ -19,7 +19,7 @@ const AllGroup = () => {
       <div className="w-11/12 mx-auto">
         <Slider></Slider>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="w-11/12 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
         {allGroups.map((group, index) => (
           <GroupCard key={index} group={group}></GroupCard>
         ))}
