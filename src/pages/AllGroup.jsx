@@ -15,7 +15,7 @@ const AllGroup = () => {
   }, []);
   const allGroups = [...groups, ...localGroups];
   return (
-    <>
+    <div className="my-12">
       <div className="w-11/12 mx-auto">
         <Slider></Slider>
       </div>
@@ -24,7 +24,7 @@ const AllGroup = () => {
           <GroupCard key={index} group={group}></GroupCard>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

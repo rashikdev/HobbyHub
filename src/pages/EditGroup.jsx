@@ -1,32 +1,6 @@
-import React, { use } from "react";
-import { AuthContext } from "../context/AuthProvider";
-import toast from "react-hot-toast";
+import React from "react";
 
-const CreateGroup = () => {
-  const { user } = use(AuthContext);
-
-  const handleCreateGroup = (e) => {
-    e.preventDefault();
-    const form = e.target;
-
-    const formData = new FormData(form);
-    const newGroup = Object.fromEntries(formData.entries());
-
-    fetch("http://localhost:5000/groups", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newGroup),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          toast.success("Group created successfully");
-          form.reset();
-        }
-      });
-  };
+const EditGroup = () => {
   return (
     <div className="max-w-3xl mx-auto p-6 mt-8 bg-white dark:bg-base-200 rounded-lg shadow">
       <h2 className="text-2xl font-bold mb-1">Create a group</h2>
@@ -149,7 +123,6 @@ const CreateGroup = () => {
             />
           </div>
         </div>
-
         <button type="submit" className="btn btn-primary w-full mt-4">
           Create
         </button>
@@ -158,4 +131,4 @@ const CreateGroup = () => {
   );
 };
 
-export default CreateGroup;
+export default EditGroup;
