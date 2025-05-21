@@ -13,7 +13,7 @@ const AllGroup = () => {
         setGroups(data);
       });
   }, []);
-  const allGroups = [...localGroups, ...groups];
+  const allGroups = [...groups,...localGroups];
   return (
     <div className="my-12">
       <div className="w-11/12 mx-auto">
