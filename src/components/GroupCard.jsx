@@ -26,8 +26,8 @@ const GroupCard = ({ group }) => {
       <p className="text-sm text-gray-600">{group.members}</p>
       <p className="text-sm text-blue-500">Next event: {group.nextEvent}</p>
       <Link to={`/group-details/${group.id}`}>
-        <button className="mt-4 w-full bg-blue-500 text-white md:py-2 py-1 rounded-full hover:bg-blue-600 cursor-pointer">
-          Group Details
+        <button className="mt-4 w-full bg-blue-500 text-white py-1 rounded-full hover:bg-blue-600 cursor-pointer">
+          See More
         </button>
       </Link>
     </div>

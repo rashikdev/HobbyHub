@@ -37,7 +37,6 @@ const Slider = () => {
       {/* Overlay for background tint */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/30 to-black/50 backdrop-blur-[3px] z-10 rounded-2xl" />
 
-      {/* Centered Typewriter */}
       <div className="absolute top-1/2 left-1/2 z-20 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">
         <h1 className="text-white text-2xl md:text-4xl font-extrabold drop-shadow-md">
           <span className="text-orange-400 underline underline-offset-4">

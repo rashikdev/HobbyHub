@@ -4,6 +4,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MyGroup = () => {
   const { user } = use(AuthContext);
@@ -19,18 +20,36 @@ const MyGroup = () => {
       });
   }, []);
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/groups/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          toast.success("Group deleted successfully");
-          const remaining = groups.filter((group) => group._id !== id);
-          setGroups(remaining);
-        }
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/groups/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              toast.success("Group deleted successfully");
+              const remaining = groups.filter((group) => group._id !== id);
+              setGroups(remaining);
+            } else {
+              toast.error("Failed to delete group. Try again.");
+            }
+          })
+          .catch(() => {
+            toast.error("Something went wrong. Please check your connection.");
+          });
+      }
+    });
   };
+
   return (
     <div className="w-full min-h-[calc(100vh-370px)] mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h2 className="text-2xl sm:text-3xl font-bold mb-10">Groups</h2>
@@ -115,7 +134,10 @@ const MyGroup = () => {
               </div>
               <div className="flex justify-end space-x-5 pt-2">
                 <Link to={`/group-update/${group._id}`}>
-                  <GrFormEdit className="cursor-pointer text-blue-600" size={25} />
+                  <GrFormEdit
+                    className="cursor-pointer text-blue-600"
+                    size={25}
+                  />
                 </Link>
                 <MdDeleteForever
                   className="cursor-pointer"
