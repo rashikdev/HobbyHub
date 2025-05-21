@@ -4,7 +4,6 @@ import { Link } from "react-router";
 
 const GroupCard = ({ group }) => {
   const [loaded, setLoaded] = useState(false);
-
   return (
     <div className="bg-white p-4 rounded-xl shadow-md">
       <div className="w-full relative bg-gray-100 overflow-hidden flex items-center justify-center">
@@ -25,7 +24,7 @@ const GroupCard = ({ group }) => {
       </h3>
       <p className="text-sm text-gray-600">{group.members}</p>
       <p className="text-sm text-blue-500">Next event: {group.nextEvent}</p>
-      <Link to={`/group-details/${group.id}`}>
+      <Link to={`/group-details/${group._id}`}>
         <button className="mt-4 w-full bg-blue-500 text-white py-1 rounded-full hover:bg-blue-600 cursor-pointer">
           See More
         </button>

@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 
 const GroupDetails = () => {
+  const [groups, setGroups] = useState([]);
   const [loaded, setLoaded] = useState(false);
-  const groups = useLoaderData();
+  const localGroups = useLoaderData();
   const { id } = useParams();
-  const group = groups.find((group) => group.id === parseInt(id));
-  const {
-    name,
-    image,
-    description,
-    category,
-    location,
-    members,
-    nextEvent,
-    startDate,
-  } = group;
-  console.log(group);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/groups")
+      .then((res) => res.json())
+      .then((data) => {
+        setGroups(data);
+      });
+  }, []);
+
+  const group = groups.find((group) => group._id === id);
+
+  const lGroup = localGroups.find((group) => group._id === id);
   return (
     <div className="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 my-10 text-black">
       <h2 className="text-3xl font-bold mb-6 text-indigo-600">Group Details</h2>
@@ -29,7 +30,7 @@ const GroupDetails = () => {
             </div>
           )}
           <img
-            src={image}
+            src={lGroup?.image || group?.image}
             alt="Group"
             onLoad={() => setLoaded(true)}
             className="w-full md:h-80 object-cover rounded-lg mb-6"
@@ -40,39 +41,39 @@ const GroupDetails = () => {
           <h3 className="font-bold text-[17px]">
             Description:{" "}
             <span className="text-[15px] text-gray-500 font-medium">
-              {description}
+              {lGroup?.description || group?.description}
             </span>
           </h3>
           <h3 className="font-bold text-[17px]">
             Group Name:{" "}
             <span className="text-[15px] text-gray-500 font-medium">
-              {name}
+              {lGroup?.groupName || group?.groupName}
             </span>
           </h3>
           <h3 className="font-bold text-[17px]">
             Hobby Category:{" "}
             <span className="text-[15px] text-gray-500 font-medium">
-              {category}
+              {lGroup?.hobbyCategory || group?.hobbyCategory}
             </span>
           </h3>
           <h3 className="font-bold text-[17px]">
             Meeting Location:{" "}
             <span className="text-[15px] text-gray-500 font-medium">
-              {location}
+              {lGroup?.meetingLocation || group?.meetingLocation}
             </span>
           </h3>
 
           <h3 className="font-bold text-[17px]">
             Max Members:{" "}
             <span className="text-[15px] text-gray-500 font-medium">
-              {members}
+              {lGroup?.members || group?.members}
             </span>
           </h3>
 
           <h3 className="font-bold text-[17px]">
             Start Date:{" "}
             <span className="text-[15px] text-gray-500 font-medium">
-              {startDate}
+              {lGroup?.startDate || group?.startDate}
             </span>
           </h3>
         </div>

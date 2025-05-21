@@ -1,122 +1,134 @@
 [
   {
-    "id": 1,
+    "_id": "1",
     "groupName": "Hiking in the Bay Area",
     "members": "1,000+ members",
     "nextEvent": "8/12",
     "startDate": "2025-08-10",
     "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
-    "category": "featuredGroup",
-    "description": "Explore the Bay Area's most scenic hiking trails every weekend with fellow enthusiasts."
+    "hobbyCategory": "featuredGroup",
+    "description": "Explore the Bay Area's most scenic hiking trails every weekend with fellow enthusiasts.",
+    "location": "Rangpur"
   },
   {
-    "id": 2,
+    "_id": "2",
     "groupName": "Downtown Book Club",
     "members": "500+ members",
     "nextEvent": "8/20",
     "startDate": "2025-08-22",
     "image": "https://i.postimg.cc/NGy6XhDx/2150062128.jpg",
-    "category": "featuredGroup",
-    "description": "Join lively discussions on a wide range of books with readers from all walks of life."
+    "hobbyCategory": "featuredGroup",
+    "description": "Join lively discussions on a wide range of books with readers from all walks of life.",
+    "location": "Dhaka"
   },
   {
-    "id": 3,
+    "_id": "3",
     "groupName": "Weekend Photography",
     "members": "850+ members",
     "nextEvent": "8/25",
     "startDate": "2025-08-26",
     "image": "https://i.postimg.cc/bNhZw4Br/142.jpg",
-    "category": "featuredGroup",
-    "description": "Capture moments and improve your photography skills every weekend with like-minded creatives."
+    "hobbyCategory": "featuredGroup",
+    "description": "Capture moments and improve your photography skills every weekend with like-minded creatives.",
+    "location": "Khulna"
   },
   {
-    "id": 4,
+    "_id": "4",
     "groupName": "Creative Painting Circle",
     "members": "300+ members",
     "nextEvent": "8/18",
     "startDate": "2025-08-01",
     "image": "https://i.postimg.cc/44bJByW4/2714.jpg",
-    "category": "featuredGroup",
-    "description": "Unleash your creativity with others through collaborative painting sessions and art challenges."
+    "hobbyCategory": "featuredGroup",
+    "description": "Unleash your creativity with others through collaborative painting sessions and art challenges.",
+    "location": "Rajshahi"
   },
   {
-    "id": 5,
+    "_id": "5",
     "groupName": "City Runners Group",
     "members": "1,200+ members",
     "nextEvent": "8/22",
     "startDate": "2025-08-23",
     "image": "https://i.postimg.cc/J4YC2kZ8/2151847302.jpg",
-    "category": "featuredGroup",
-    "description": "Join runners across the city for weekly group runs and fitness challenges."
+    "hobbyCategory": "featuredGroup",
+    "description": "Join runners across the city for weekly group runs and fitness challenges.",
+    "location": "Dhaka"
   },
   {
-    "id": 6,
+    "_id": "6",
     "groupName": "Culinary Club Nights",
     "members": "600+ members",
     "nextEvent": "8/30",
     "startDate": "2025-08-29",
     "image": "https://i.postimg.cc/GhH59ST0/20510.jpg",
-    "category": "featuredGroup",
-    "description": "Discover flavors and share cooking experiences in our evening culinary sessions."
+    "hobbyCategory": "featuredGroup",
+    "description": "Discover flavors and share cooking experiences in our evening culinary sessions.",
+    "location": "Tangail"
   },
   {
-    "id": 7,
+    "_id": "7",
     "groupName": "Mountain Photography Club",
     "image": "https://i.postimg.cc/MKfXtqf9/4697.jpg",
     "members": "800+ members",
     "nextEvent": "6/15",
     "startDate": "2025-06-01",
-    "category": "newestGroup",
-    "description": "Hike and capture breathtaking mountain landscapes with fellow photography lovers."
+    "hobbyCategory": "newestGroup",
+    "description": "Hike and capture breathtaking mountain landscapes with fellow photography lovers.",
+    "location": "Bogura"
   },
   {
-    "id": 8,
+    "_id": "8",
     "groupName": "Urban Sketching Enthusiasts",
     "image": "https://i.postimg.cc/vTsMzFJN/Screenshot-2025-05-20-121745.png",
     "members": "1,200+ members",
     "nextEvent": "6/20",
     "startDate": "2025-06-10",
-    "category": "newestGroup",
-    "description": "Explore the city through sketching meetups and develop your artistic vision."
+    "hobbyCategory": "newestGroup",
+    "description": "Explore the city through sketching meetups and develop your artistic vision.",
+    "location": "Borisal"
   },
   {
-    "id": 9,
+    "_id": "9",
     "groupName": "Beginner Hiking Club",
     "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
     "members": "650+ members",
     "nextEvent": "6/18",
     "startDate": "2025-06-05",
-    "category": "newestGroup",
-    "description": "Perfect for beginners looking to start hiking and connect with friendly nature lovers."
+    "hobbyCategory": "newestGroup",
+    "description": "Perfect for beginners looking to start hiking and connect with friendly nature lovers.",
+    "location": "Dhaka"
   },
   {
-    "id": 10,
+    "_id": "10",
     "groupName": "Coastal Cleanup Volunteers",
     "image": "https://i.postimg.cc/9Qt8k4Db/2147827006.jpg",
     "members": "500+ members",
     "nextEvent": "6/22",
     "startDate": "2025-06-12",
-    "category": "newestGroup",
-    "description": "Help preserve marine life by joining our regular beach and coastline cleanup events."
+    "hobbyCategory": "newestGroup",
+    "description": "Help preserve marine life by joining our regular beach and coastline cleanup events.",
+    "location": "Rangpur"
   },
   {
-    "id": 11,
+    "_id": "11",
     "groupName": "Drone Videography",
     "image": "https://i.postimg.cc/9QpbpvkN/260.jpg",
     "members": "950+ members",
     "nextEvent": "6/25",
     "startDate": "2025-06-15",
-    "category": "newestGroup",
-    "description": "Learn and share drone videography techniques through exciting flight meetups."
+    "hobbyCategory": "newestGroup",
+    "description": "Learn and share drone videography techniques through exciting flight meetups.",
+    "location": "Rajshahi"
   },
   {
-    "id": 12,
+    "_id": "12",
     "groupName": "Weekend Cyclists Meetup",
     "image": "https://i.postimg.cc/SxJRT91F/Screenshot-2025-05-20-122805.png",
     "members": "1,100+ members",
     "nextEvent": "6/30",
     "startDate": "2025-06-20",
-    "category": "newestGroup",
-    "description": "Cycle the city's best routes every weekend and bond over post-ride snacks and chats."
+    "hobbyCategory": "newestGroup",
+    "description": "Cycle the city's best routes every weekend and bond over post-ride snacks and chats.",
+    "location": "Dhaka"
   }
 ]
