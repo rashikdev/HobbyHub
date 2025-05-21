@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className="bg-base-300/60 backdrop-blur-md py-4 z-50 px-5 flex justify-between items-center shadow-md font-bold sticky top-0">
       {/* nav items  */}
       <div className="flex items-center gap-1">
-        <div className="dropdown md:hidden block">
+        <div className="dropdown lg:hidden block">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <CgMenuRightAlt size={20} />
           </div>
@@ -91,7 +91,7 @@ const Navbar = () => {
               isActive
                 ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
-            } hidden md:block`
+            } hidden lg:block`
           }
         >
           Home
@@ -104,7 +104,7 @@ const Navbar = () => {
               isActive
                 ? " bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
-            } hidden md:block`
+            } hidden lg:block`
           }
         >
           All Groups
@@ -117,7 +117,7 @@ const Navbar = () => {
               isActive
                 ? " bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
-            } hidden md:block`
+            } hidden lg:block`
           }
         >
           Create Group
@@ -130,36 +130,13 @@ const Navbar = () => {
               isActive
                 ? " bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
-            } hidden md:block mr-5`
+            } hidden lg:block mr-5`
           }
         >
           My Groups
         </NavLink>
         <ThemeToggle></ThemeToggle>
         <div className="flex items-center gap-4">
-          <NavLink to="/login">
-            {user ? (
-              <button
-                onClick={handleLogout}
-                title="Logout"
-                className="flex text-red-500 cursor-pointer items-center gap-2 hover:bg-red-500 hover:text-white py-2 px-3 rounded-lg transition-all duration-300"
-              >
-                <IoMdLogOut size={20} />
-              </button>
-            ) : (
-              <button className="flex items-center">
-                <p
-                  className="group relative inline-block overflow-hidden bg-[#1fbb10ea] rounded-lg px-4 py-1.5 outline-none"
-                >
-                  <span className="absolute inset-y-0 left-0 w-0 bg-indigo-500 transition-all group-hover:w-full"></span>
-
-                  <span className="relative text-sm font-medium text-white transition-colors group-hover:text-white">
-                    Login
-                  </span>
-                </p>
-              </button>
-            )}
-          </NavLink>
           <img
             title={user?.displayName}
             className="md:w-10 md:h-10 w-8 h-8 cursor-pointer rounded-full"
@@ -168,6 +145,27 @@ const Navbar = () => {
             }`}
             alt=""
           />
+          <NavLink to="/login">
+            {user ? (
+              <button
+                onClick={handleLogout}
+                title="Logout"
+                className="flex text-red-500 cursor-pointer items-center gap-2 hover:bg-red-500 hover:text-white py-1 px-2 rounded-lg transition-all duration-300"
+              >
+                <IoMdLogOut size={25} />
+              </button>
+            ) : (
+              <button className="flex items-center">
+                <p className="group relative inline-block overflow-hidden bg-[#1fbb10ea] rounded-lg px-4 py-1.5 outline-none">
+                  <span className="absolute inset-y-0 left-0 w-0 bg-indigo-500 transition-all group-hover:w-full"></span>
+
+                  <span className="flex relative text-sm font-medium md:p-1 text-white transition-colors group-hover:text-white">
+                    Login
+                  </span>
+                </p>
+              </button>
+            )}
+          </NavLink>
         </div>
       </div>
     </div>
