@@ -10,6 +10,7 @@ import LoadingPage from "../components/LoadingPage";
 import PrivateRoute from "./PrivateRoute";
 import GroupDetails from "../pages/GroupDetails";
 import EditGroup from "../pages/EditGroup";
+import ErrorPage from "../pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -70,5 +71,9 @@ export const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "*",
+    Component: ErrorPage,
   },
 ]);
