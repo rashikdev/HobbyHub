@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../context/AuthProvider";
+import toast from "react-hot-toast";
 
 const CreateGroup = () => {
   const { user } = use(AuthContext);
@@ -7,17 +8,24 @@ const CreateGroup = () => {
   const handleCreateGroup = (e) => {
     e.preventDefault();
     const form = e.target;
-    const groupName = form.groupName.value;
-    const hobbyCategory = form.hobbyCategory.value;
-    const description = form.description.value;
-    const groupImage = form.groupImage.value;
-    const groupData = {
-      groupName,
-      hobbyCategory,
-      description,
-      groupImage,
-    };
-    console.log(groupData);
+
+    const formData = new FormData(form);
+    const newGroup = Object.fromEntries(formData.entries());
+
+    fetch("http://localhost:5000/groups", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newGroup),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.insertedId){
+          toast.success("Group created successfully");
+          form.reset();
+        }
+      });
   };
   return (
     <div className="max-w-3xl mx-auto p-6 mt-8 bg-white dark:bg-base-200 rounded-lg shadow">
@@ -44,9 +52,10 @@ const CreateGroup = () => {
           <select
             name="hobbyCategory"
             className="select select-bordered w-full"
+            defaultValue=""
             required
           >
-            <option disabled selected defaultValue="">
+            <option disabled value="">
               Select a hobby category
             </option>
             <option>Drawing & Painting</option>
@@ -80,14 +89,16 @@ const CreateGroup = () => {
             className="input input-bordered w-full"
           />
         </div>
+
         <div>
           <label className="block font-medium">Max Members</label>
           <select
             name="maxMembers"
             className="select select-bordered w-full"
+            defaultValue=""
             required
           >
-            <option disabled selected value="">
+            <option disabled value="">
               How many people can join?
             </option>
             <option>5</option>
@@ -122,7 +133,7 @@ const CreateGroup = () => {
             <input
               type="text"
               name="name"
-              value={user.displayName}
+              value={user?.displayName || ""}
               readOnly
               className="input input-bordered w-full bg-base-100 cursor-not-allowed"
             />
@@ -132,7 +143,7 @@ const CreateGroup = () => {
             <input
               type="email"
               name="email"
-              value={user.email}
+              value={user?.email || ""}
               readOnly
               className="input input-bordered w-full bg-base-100 cursor-not-allowed"
             />
