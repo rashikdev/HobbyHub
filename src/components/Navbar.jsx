@@ -6,6 +6,7 @@ import userLogo from "../assets/user.png";
 import { AuthContext } from "../context/AuthProvider";
 import { IoMdLogOut } from "react-icons/io";
 import toast from "react-hot-toast";
+import ThemeToggle from "./ThemeToggle";
 const Navbar = () => {
   const { user, logoutUser } = use(AuthContext);
   const handleLogout = () => {
@@ -134,6 +135,7 @@ const Navbar = () => {
         >
           My Groups
         </NavLink>
+        <ThemeToggle></ThemeToggle>
         <div className="flex items-center gap-4">
           <NavLink to="/login">
             {user ? (
@@ -146,16 +148,15 @@ const Navbar = () => {
               </button>
             ) : (
               <button className="flex items-center">
-                <a
+                <p
                   className="group relative inline-block overflow-hidden bg-[#1fbb10ea] rounded-lg px-4 py-1.5 outline-none"
-                  href="#"
                 >
                   <span className="absolute inset-y-0 left-0 w-0 bg-indigo-500 transition-all group-hover:w-full"></span>
 
                   <span className="relative text-sm font-medium text-white transition-colors group-hover:text-white">
                     Login
                   </span>
-                </a>
+                </p>
               </button>
             )}
           </NavLink>

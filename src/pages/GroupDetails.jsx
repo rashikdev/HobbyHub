@@ -18,7 +18,7 @@ const GroupDetails = () => {
   } = group;
   console.log(group);
   return (
-    <div className="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 my-10">
+    <div className="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 my-10 text-black">
       <h2 className="text-3xl font-bold mb-6 text-indigo-600">Group Details</h2>
 
       <div className="md:flex md:gap-5">

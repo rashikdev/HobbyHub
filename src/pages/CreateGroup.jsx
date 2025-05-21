@@ -1,9 +1,148 @@
-import React from 'react';
+import React, { use } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const CreateGroup = () => {
+  const { user } = use(AuthContext);
+
+  const handleCreateGroup = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const groupName = form.groupName.value;
+    const hobbyCategory = form.hobbyCategory.value;
+    const description = form.description.value;
+    const groupImage = form.groupImage.value;
+    const groupData = {
+      groupName,
+      hobbyCategory,
+      description,
+      groupImage,
+    };
+    console.log(groupData);
+  };
   return (
-    <div>
-      <h1>CreateGroup</h1>
+    <div className="max-w-3xl mx-auto p-6 mt-8 bg-white dark:bg-base-200 rounded-lg shadow">
+      <h2 className="text-2xl font-bold mb-1">Create a group</h2>
+      <p className="mb-6 text-sm text-gray-500">
+        This is your group's details page. Here you can set the group's name,
+        hobby category, description, and other details.
+      </p>
+
+      <form onSubmit={handleCreateGroup} className="space-y-4">
+        <div>
+          <label className="block font-medium">Group Name</label>
+          <input
+            type="text"
+            name="groupName"
+            placeholder="Start with a name"
+            className="input input-bordered w-full"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block font-medium">Hobby Category</label>
+          <select
+            name="hobbyCategory"
+            className="select select-bordered w-full"
+            required
+          >
+            <option disabled selected defaultValue="">
+              Select a hobby category
+            </option>
+            <option>Drawing & Painting</option>
+            <option>Photography</option>
+            <option>Video Gaming</option>
+            <option>Fishing</option>
+            <option>Running</option>
+            <option>Cooking</option>
+            <option>Reading</option>
+            <option>Writing</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block font-medium">Description</label>
+          <textarea
+            name="description"
+            placeholder="What's your group about?"
+            className="textarea textarea-bordered w-full"
+            rows={3}
+            required
+          ></textarea>
+        </div>
+
+        <div>
+          <label className="block font-medium">Meeting Location</label>
+          <input
+            type="text"
+            name="location"
+            placeholder="Where will you meet?"
+            className="input input-bordered w-full"
+          />
+        </div>
+        <div>
+          <label className="block font-medium">Max Members</label>
+          <select
+            name="maxMembers"
+            className="select select-bordered w-full"
+            required
+          >
+            <option disabled selected value="">
+              How many people can join?
+            </option>
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block font-medium">Start Date</label>
+          <input
+            type="date"
+            name="startDate"
+            className="input input-bordered w-full"
+          />
+        </div>
+
+        <div>
+          <label className="block font-medium">Image URL</label>
+          <input
+            type="url"
+            name="imageUrl"
+            placeholder="Input image URL"
+            className="input input-bordered w-full"
+          />
+        </div>
+
+        <div className="flex gap-4">
+          <div className="w-1/2">
+            <label className="block font-medium">User Name</label>
+            <input
+              type="text"
+              name="name"
+              value={user.displayName}
+              readOnly
+              className="input input-bordered w-full bg-base-100 cursor-not-allowed"
+            />
+          </div>
+          <div className="w-1/2">
+            <label className="block font-medium">User Email</label>
+            <input
+              type="email"
+              name="email"
+              value={user.email}
+              readOnly
+              className="input input-bordered w-full bg-base-100 cursor-not-allowed"
+            />
+          </div>
+        </div>
+
+        <button type="submit" className="btn btn-primary w-full mt-4">
+          Create
+        </button>
+      </form>
     </div>
   );
 };
