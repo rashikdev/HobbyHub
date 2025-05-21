@@ -21,7 +21,7 @@ const CreateGroup = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.insertedId){
+        if (data.insertedId) {
           toast.success("Group created successfully");
           form.reset();
         }
@@ -40,7 +40,7 @@ const CreateGroup = () => {
           <label className="block font-medium">Group Name</label>
           <input
             type="text"
-            name="groupName"
+            name="name"
             placeholder="Start with a name"
             className="input input-bordered w-full"
             required
@@ -93,7 +93,7 @@ const CreateGroup = () => {
         <div>
           <label className="block font-medium">Max Members</label>
           <select
-            name="maxMembers"
+            name="members"
             className="select select-bordered w-full"
             defaultValue=""
             required
@@ -101,10 +101,10 @@ const CreateGroup = () => {
             <option disabled value="">
               How many people can join?
             </option>
-            <option>5</option>
-            <option>10</option>
-            <option>20</option>
-            <option>50</option>
+            <option>200+ members</option>
+            <option>500+ members</option>
+            <option>1,000+ members</option>
+            <option>2,000+ members</option>
           </select>
         </div>
 
@@ -121,7 +121,7 @@ const CreateGroup = () => {
           <label className="block font-medium">Image URL</label>
           <input
             type="url"
-            name="imageUrl"
+            name="image"
             placeholder="Input image URL"
             className="input input-bordered w-full"
           />

@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Hiking in the Bay Area",
-    "members": "1,000+",
+    "groupName": "Hiking in the Bay Area",
+    "members": "1,000+ members",
     "nextEvent": "8/12",
     "startDate": "2025-08-10",
     "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
@@ -11,8 +11,8 @@
   },
   {
     "id": 2,
-    "name": "Downtown Book Club",
-    "members": "500+",
+    "groupName": "Downtown Book Club",
+    "members": "500+ members",
     "nextEvent": "8/20",
     "startDate": "2025-08-22",
     "image": "https://i.postimg.cc/NGy6XhDx/2150062128.jpg",
@@ -21,8 +21,8 @@
   },
   {
     "id": 3,
-    "name": "Weekend Photography",
-    "members": "850+",
+    "groupName": "Weekend Photography",
+    "members": "850+ members",
     "nextEvent": "8/25",
     "startDate": "2025-08-26",
     "image": "https://i.postimg.cc/bNhZw4Br/142.jpg",
@@ -31,8 +31,8 @@
   },
   {
     "id": 4,
-    "name": "Creative Painting Circle",
-    "members": "300+",
+    "groupName": "Creative Painting Circle",
+    "members": "300+ members",
     "nextEvent": "8/18",
     "startDate": "2025-08-01",
     "image": "https://i.postimg.cc/44bJByW4/2714.jpg",
@@ -41,8 +41,8 @@
   },
   {
     "id": 5,
-    "name": "City Runners Group",
-    "members": "1,200+",
+    "groupName": "City Runners Group",
+    "members": "1,200+ members",
     "nextEvent": "8/22",
     "startDate": "2025-08-23",
     "image": "https://i.postimg.cc/J4YC2kZ8/2151847302.jpg",
@@ -51,8 +51,8 @@
   },
   {
     "id": 6,
-    "name": "Culinary Club Nights",
-    "members": "600+",
+    "groupName": "Culinary Club Nights",
+    "members": "600+ members",
     "nextEvent": "8/30",
     "startDate": "2025-08-29",
     "image": "https://i.postimg.cc/GhH59ST0/20510.jpg",
@@ -61,7 +61,7 @@
   },
   {
     "id": 7,
-    "name": "Mountain Photography Club",
+    "groupName": "Mountain Photography Club",
     "image": "https://i.postimg.cc/MKfXtqf9/4697.jpg",
     "members": "800+ members",
     "nextEvent": "6/15",
@@ -71,7 +71,7 @@
   },
   {
     "id": 8,
-    "name": "Urban Sketching Enthusiasts",
+    "groupName": "Urban Sketching Enthusiasts",
     "image": "https://i.postimg.cc/vTsMzFJN/Screenshot-2025-05-20-121745.png",
     "members": "1,200+ members",
     "nextEvent": "6/20",
@@ -81,7 +81,7 @@
   },
   {
     "id": 9,
-    "name": "Beginner Hiking Club",
+    "groupName": "Beginner Hiking Club",
     "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
     "members": "650+ members",
     "nextEvent": "6/18",
@@ -91,7 +91,7 @@
   },
   {
     "id": 10,
-    "name": "Coastal Cleanup Volunteers",
+    "groupName": "Coastal Cleanup Volunteers",
     "image": "https://i.postimg.cc/9Qt8k4Db/2147827006.jpg",
     "members": "500+ members",
     "nextEvent": "6/22",
@@ -101,7 +101,7 @@
   },
   {
     "id": 11,
-    "name": "Drone Videography",
+    "groupName": "Drone Videography",
     "image": "https://i.postimg.cc/9QpbpvkN/260.jpg",
     "members": "950+ members",
     "nextEvent": "6/25",
@@ -111,7 +111,7 @@
   },
   {
     "id": 12,
-    "name": "Weekend Cyclists Meetup",
+    "groupName": "Weekend Cyclists Meetup",
     "image": "https://i.postimg.cc/SxJRT91F/Screenshot-2025-05-20-122805.png",
     "members": "1,100+ members",
     "nextEvent": "6/30",

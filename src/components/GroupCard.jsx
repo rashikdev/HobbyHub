@@ -16,11 +16,13 @@ const GroupCard = ({ group }) => {
         <img
           onLoad={() => setLoaded(true)}
           src={group.image}
-          alt={group.name}
+          alt={group.groupName}
           className="rounded-lg mb-3 md:min-h-[140px] h-[90px]"
         />
       </div>
-      <h3 className="font-semibold text-[15px] text-black">{group.name}</h3>
+      <h3 className="font-semibold text-[15px] text-black">
+        {group.groupName}
+      </h3>
       <p className="text-sm text-gray-600">{group.members}</p>
       <p className="text-sm text-blue-500">Next event: {group.nextEvent}</p>
       <Link to={`/group-details/${group.id}`}>

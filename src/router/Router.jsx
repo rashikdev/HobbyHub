@@ -32,6 +32,8 @@ export const router = createBrowserRouter([
       {
         path: "/all-groups",
         Component: AllGroup,
+        loader: () => fetch("/groupsData.json"),
+        hydrateFallbackElement: <LoadingPage></LoadingPage>,
       },
       {
         path: "/group-details/:id",
