@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import LoadingPage from "../components/LoadingPage";
 import PrivateRoute from "./PrivateRoute";
 import GroupDetails from "../pages/GroupDetails";
+import EditGroup from "../pages/EditGroup";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,13 @@ export const router = createBrowserRouter([
         path: "/all-groups",
         Component: AllGroup,
         loader: () => fetch("/groupsData.json"),
+        hydrateFallbackElement: <LoadingPage></LoadingPage>,
+      },
+      {
+        path: "/group-update/:id",
+        Component: EditGroup,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/groups/${params.id}`),
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
       },
       {

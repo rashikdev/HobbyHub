@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import { GrFormEdit } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -62,10 +62,15 @@ const MyGroup = () => {
                   <td className="px-6 py-4">{group.location}</td>
                   <td className="px-6 py-4">{group.members}</td>
                   <td className="px-6 py-4">{group.startDate}</td>
-                  <td className="px-6 py-4 space-x-3">
-                    <button className="cursor-pointer">
-                      <GrFormEdit size={25} />
-                    </button>
+                  <td>
+                    <Link
+                      to={`/group-update/${group._id}`}
+                      className="px-6 py-4 space-x-3"
+                    >
+                      <button className="cursor-pointer text-blue-600">
+                        <GrFormEdit size={25} />
+                      </button>
+                    </Link>
                     <button
                       onClick={() => handleDelete(group._id)}
                       className="cursor-pointer"
@@ -109,7 +114,9 @@ const MyGroup = () => {
                 <span>{group.startDate}</span>
               </div>
               <div className="flex justify-end space-x-5 pt-2">
-                <GrFormEdit className="cursor-pointer" size={25} />
+                <Link to={`/group-update/${group._id}`}>
+                  <GrFormEdit className="cursor-pointer text-blue-600" size={25} />
+                </Link>
                 <MdDeleteForever
                   className="cursor-pointer"
                   onClick={() => handleDelete(group._id)}

@@ -1,20 +1,44 @@
 import React from "react";
+import toast from "react-hot-toast";
+import { useLoaderData } from "react-router";
 
 const EditGroup = () => {
+  const group = useLoaderData();
+  const id = group._id;
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const updatedGroup = Object.fromEntries(formData.entries());
+    fetch(`http://localhost:5000/groups/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedGroup),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          toast.success("Group updated successfully");
+        }
+      });
+  };
   return (
     <div className="max-w-3xl mx-auto p-6 mt-8 bg-white dark:bg-base-200 rounded-lg shadow">
-      <h2 className="text-2xl font-bold mb-1">Create a group</h2>
+      <h2 className="text-2xl font-bold mb-1">Update group</h2>
       <p className="mb-6 text-sm text-gray-500">
-        This is your group's details page. Here you can set the group's name,
-        hobby category, description, and other details.
+        This is your group's details page. Here you can update the group's name,
+        category, description, and meeting location.
       </p>
 
-      <form onSubmit={handleCreateGroup} className="space-y-4">
+      <form onSubmit={handleUpdate} className="space-y-4">
         <div>
           <label className="block font-medium">Group Name</label>
           <input
             type="text"
             name="groupName"
+            defaultValue={group.groupName}
             placeholder="Start with a name"
             className="input input-bordered w-full"
             required
@@ -26,7 +50,7 @@ const EditGroup = () => {
           <select
             name="hobbyCategory"
             className="select select-bordered w-full"
-            defaultValue=""
+            defaultValue={group.hobbyCategory}
             required
           >
             <option disabled value="">
@@ -47,6 +71,7 @@ const EditGroup = () => {
           <label className="block font-medium">Description</label>
           <textarea
             name="description"
+            defaultValue={group.description}
             placeholder="What's your group about?"
             className="textarea textarea-bordered w-full"
             rows={3}
@@ -59,6 +84,7 @@ const EditGroup = () => {
           <input
             type="text"
             name="location"
+            defaultValue={group.location}
             placeholder="Where will you meet?"
             className="input input-bordered w-full"
           />
@@ -69,7 +95,7 @@ const EditGroup = () => {
           <select
             name="members"
             className="select select-bordered w-full"
-            defaultValue=""
+            defaultValue={group.members}
             required
           >
             <option disabled value="">
@@ -87,6 +113,7 @@ const EditGroup = () => {
           <input
             type="date"
             name="startDate"
+            defaultValue={group.startDate}
             className="input input-bordered w-full"
           />
         </div>
@@ -96,6 +123,7 @@ const EditGroup = () => {
           <input
             type="url"
             name="image"
+            defaultValue={group.image}
             placeholder="Input image URL"
             className="input input-bordered w-full"
           />
@@ -107,7 +135,7 @@ const EditGroup = () => {
             <input
               type="text"
               name="name"
-              value={user?.displayName || ""}
+              value={group.name}
               readOnly
               className="input input-bordered w-full bg-base-100 cursor-not-allowed"
             />
@@ -117,14 +145,14 @@ const EditGroup = () => {
             <input
               type="email"
               name="email"
-              value={user?.email || ""}
+              value={group.email}
               readOnly
               className="input input-bordered w-full bg-base-100 cursor-not-allowed"
             />
           </div>
         </div>
         <button type="submit" className="btn btn-primary w-full mt-4">
-          Create
+          Update Group
         </button>
       </form>
     </div>
