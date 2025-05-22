@@ -14,7 +14,7 @@ const Slider = () => {
   ];
 
   return (
-    <div className="w-full relative overflow-hidden shadow-xl mb-10">
+    <div className="w-full relative overflow-hidden shadow-xl mb-10 font-[Playwrite_HU]">
       <Carousel
         showThumbs={false}
         autoPlay

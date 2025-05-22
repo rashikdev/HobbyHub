@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
         <NavLink className="flex items-center" to="/">
           <img className="md:w-10 w-7 rounded-full" src={logo} alt="" />
-          <h2 className="font-bold text-xl md:text-2xl md:ml-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          <h2 className="font-bold text-xl md:text-2xl md:ml-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text font-[Nova_Cut]">
             HobbyHub
           </h2>
         </NavLink>
@@ -50,7 +50,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
+                ? "bg-gradient-to-br from-orange-500 via-pink-500 to-red-400 py-1 px-2 rounded-bl-2xl rounded-tr-2xl font-semibold text-white"
                 : ""
             } hidden lg:block`
           }
@@ -63,7 +63,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
+                ? "bg-gradient-to-br from-orange-500 via-pink-500 to-red-400 py-1 px-2 rounded-bl-2xl rounded-tr-2xl font-semibold text-white"
                 : ""
             } hidden lg:block`
           }
@@ -76,7 +76,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
+                ? "bg-gradient-to-br from-orange-500 via-pink-500 to-red-400 py-1 px-2 rounded-bl-2xl rounded-tr-2xl font-semibold text-white"
                 : ""
             } hidden lg:block`
           }
@@ -89,7 +89,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
+                ? "bg-gradient-to-br from-orange-500 via-pink-500 to-red-400 py-1 px-2 rounded-bl-2xl rounded-tr-2xl font-semibold text-white"
                 : ""
             } hidden lg:block mr-3`
           }

@@ -57,27 +57,27 @@ const MyGroup = () => {
 
   return (
     <div className="w-full min-h-[calc(100vh-370px)] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-10">Groups</h2>
+      <h2 className="font-bold mb-10 text-fuchsia-500 font-[Playwrite_HU] md:hidden">My Groups</h2>
       {loading ? (
         <div className="min-h-[calc(100vh-457px)] flex items-center justify-center gap-2">
           <span className="text-xl text-blue-500">Loading Groups</span>
           <div className="w-7 h-7 border-4 border-blue-500 border-t-red-500 border-r-green-500 border-b-yellow-500 rounded-full animate-spin"></div>
         </div>
       ) : groups.length === 0 ? (
-        <div className="text-center mt-10">
+        <div className="text-center md:mt-50">
           <img
             src={nodata}
             alt="No groups"
-            className="mx-auto w-40 opacity-80"
+            className="mx-auto md:w-80 w-40 opacity-80 rounded-bl-4xl rounded-tr-4xl shadow-[0_0_30px_#F75A5A]"
           />
-          <h2 className="text-xl font-semibold text-gray-600 mt-4">
+          <h2 className="text-xl md:text-2xl font-semibold mt-4">
             No groups created yet
           </h2>
-          <p className="text-gray-500 mt-2">
+          <p className="mt-2">
             Start by creating your first group!
           </p>
           <NavLink to="/createGroup">
-            <button className="mt-4 text-white px-4 py-2 rounded-md bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 cursor-pointer hover:shadow-[0_0_20px_#F75A5A] hover:scale-95 transition-all">
+            <button className="mt-4 text-white px-4 py-2 md:px-8 md:py-3 rounded-md bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 cursor-pointer hover:shadow-[0_0_20px_#F75A5A] hover:scale-95 transition-all md:text-xl">
               Create Group
             </button>
           </NavLink>
@@ -85,8 +85,8 @@ const MyGroup = () => {
       ) : (
         <div className="overflow-x-auto rounded-lg shadow">
           <div className="hidden md:block">
-            <table className="min-w-full bg-white text-sm sm:text-base text-left text-gray-700">
-              <thead className="bg-gray-100 text-gray-800 font-semibold">
+            <table className="min-w-full bg-gradient-to-br from-orange-400 via-blue-200 to-red-200 text-sm sm:text-base text-left text-gray-700">
+              <thead className="font-semibold">
                 <tr>
                   <th className="px-6 py-3">Group Name</th>
                   <th className="px-6 py-3">Description</th>
@@ -100,7 +100,7 @@ const MyGroup = () => {
                 {groups.map((group, index) => (
                   <tr
                     key={index}
-                    className="border-t hover:bg-gray-50 transition-colors"
+                    className="border-t transition-colors"
                   >
                     <td className="px-6 py-4 font-medium">{group.groupName}</td>
                     <td className="px-6 py-4 text-blue-600 md:w-[300px]">

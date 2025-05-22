@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 const TestimonialsSection = () => {
   return (
     <div className="my-12 md:p-4 p-2 bg-base-300 rounded-xl text-center">
-      <h2 className="md:text-3xl text-xl font-bold  mb-8">What Our Members Say</h2>
+      <h2 className="md:text-2xl text-xl font-semibold text-[#f74477e1] font-[Playwrite_HU] text-shadow-[0px_0px_20px_red] mb-8">What Our Members Say</h2>
       <div className="rounded-md overflow-hidden">
         <Marquee pauseOnHover={true}>
           <div className="bg-gradient-to-br from-orange-300  to-green-400 shadow-lg p-6 rounded-lg md:w-72 w-70 mr-3 skew-x-6">
