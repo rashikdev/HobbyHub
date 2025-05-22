@@ -38,14 +38,14 @@ export const router = createBrowserRouter([
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
       },
       {
-        path: "/group-update/:id",
+        path: "/updateGroup/:id",
         Component: EditGroup,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/groups/${params.id}`),
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
       },
       {
-        path: "/group-details/:id",
+        path: "/group/:id",
         loader: () => fetch("/groupsData.json"),
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
         element: (
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/create-group",
+        path: "/createGroup",
         element: (
           <PrivateRoute>
             <CreateGroup></CreateGroup>
@@ -63,7 +63,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/my-groups",
+        path: "/myGroup",
         element: (
           <PrivateRoute>
             <MyGroup></MyGroup>

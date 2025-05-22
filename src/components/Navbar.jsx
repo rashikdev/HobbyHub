@@ -59,7 +59,7 @@ const Navbar = () => {
                     : ""
                 }`
               }
-              to="/create-group"
+              to="/createGroup"
             >
               Create Group
             </NavLink>
@@ -71,7 +71,7 @@ const Navbar = () => {
                     : ""
                 }`
               }
-              to="/my-groups"
+              to="/myGroup"
             >
               My Groups
             </NavLink>
@@ -112,7 +112,7 @@ const Navbar = () => {
           All Groups
         </NavLink>
         <NavLink
-          to="/create-group"
+          to="/createGroup"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className={({ isActive }) =>
             `${
@@ -125,7 +125,7 @@ const Navbar = () => {
           Create Group
         </NavLink>
         <NavLink
-          to="/my-groups"
+          to="/myGroup"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className={({ isActive }) =>
             `${

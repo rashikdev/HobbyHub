@@ -36,12 +36,12 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/create-Group" className="hover:underline">
+              <Link to="/createGroup" className="hover:underline">
                 Create Group
               </Link>
             </li>
             <li>
-              <Link to="/my-Groups" className="hover:underline">
+              <Link to="/myGroup" className="hover:underline">
                 My Groups
               </Link>
             </li>

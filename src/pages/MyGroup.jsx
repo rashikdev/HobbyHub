@@ -83,7 +83,7 @@ const MyGroup = () => {
                   <td className="px-6 py-4">{group.startDate}</td>
                   <td>
                     <Link
-                      to={`/group-update/${group._id}`}
+                      to={`/updateGroup/${group._id}`}
                       className="px-6 py-4 space-x-3"
                     >
                       <button className="cursor-pointer text-blue-600">
@@ -133,7 +133,7 @@ const MyGroup = () => {
                 <span>{group.startDate}</span>
               </div>
               <div className="flex justify-end space-x-5 pt-2">
-                <Link to={`/group-update/${group._id}`}>
+                <Link to={`/updateGroup/${group._id}`}>
                   <GrFormEdit
                     className="cursor-pointer text-blue-600"
                     size={25}
