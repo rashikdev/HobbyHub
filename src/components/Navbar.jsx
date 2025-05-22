@@ -10,14 +10,16 @@ import ThemeToggle from "./ThemeToggle";
 import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
-  const { user, logoutUser } = use(AuthContext);
+  const { user, logoutUser, loading } = use(AuthContext);
+
   const handleLogout = () => {
     toast.error("Logout Successfully");
     logoutUser();
   };
+
   return (
     <div className="bg-base-300/60 backdrop-blur-md py-4 z-50 px-5 flex justify-between items-center shadow-md font-bold sticky top-0">
-      {/* nav items  */}
+      {/* nav items */}
       <div className="flex items-center gap-1">
         <div className="dropdown lg:hidden block">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -27,54 +29,10 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-40 py-4 shadow space-y-3 font-medium"
           >
-            <NavLink
-              className={({ isActive }) =>
-                `${
-                  isActive
-                    ? "text-red-500 underline underline-offset-8 font-semibold"
-                    : ""
-                }`
-              }
-              to="/"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${
-                  isActive
-                    ? "text-red-500 underline underline-offset-8 font-semibold"
-                    : ""
-                }`
-              }
-              to="/all-groups"
-            >
-              All Groups
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${
-                  isActive
-                    ? "text-red-500 underline underline-offset-8 font-semibold"
-                    : ""
-                }`
-              }
-              to="/createGroup"
-            >
-              Create Group
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${
-                  isActive
-                    ? "text-red-500 underline underline-offset-8 font-semibold"
-                    : ""
-                }`
-              }
-              to="/myGroup"
-            >
-              My Groups
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/all-groups">All Groups</NavLink>
+            <NavLink to="/createGroup">Create Group</NavLink>
+            <NavLink to="/myGroup">My Groups</NavLink>
           </ul>
         </div>
         <NavLink className="flex items-center" to="/">
@@ -84,6 +42,7 @@ const Navbar = () => {
           </h2>
         </NavLink>
       </div>
+
       <div className="flex items-center gap-7 text-[16px]">
         <NavLink
           to="/"
@@ -104,7 +63,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? " bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
+                ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
             } hidden lg:block`
           }
@@ -117,7 +76,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? " bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
+                ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
             } hidden lg:block`
           }
@@ -130,53 +89,68 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? " bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
+                ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
             } hidden lg:block mr-5`
           }
         >
           My Groups
         </NavLink>
+
         <ThemeToggle
           data-tooltip-id="theme-tooltip"
           data-tooltip-content="Change Theme"
-        ></ThemeToggle>
-        <div className="flex items-center gap-2 md:gap-4">
-          <img
-            data-tooltip-id="user-tooltip"
-            data-tooltip-content={user?.displayName}
-            className="md:w-10 md:h-10 w-8 h-8 cursor-pointer rounded-full"
-            src={`${
-              user ? (user.photoURL ? user.photoURL : userLogo) : userLogo
-            }`}
-            alt=""
-          />
-          <NavLink to="/login">
-            {user ? (
-              <button
-                onClick={handleLogout}
-                className="flex text-red-500 cursor-pointer items-center gap-2 hover:bg-red-500 hover:text-white py-1 px-2 rounded-lg transition-all duration-300"
-                data-tooltip-id="logout-tooltip"
-                data-tooltip-content="Logout"
-              >
-                <IoMdLogOut size={25} />
-              </button>
-            ) : (
-              <button
-                className="flex items-center"
-                data-tooltip-id="login-tooltip"
-                data-tooltip-content="Login to your account"
-              >
-                <p className="group relative inline-block overflow-hidden bg-[#1fbb10ea] rounded-lg px-4 py-1.5 outline-none">
-                  <span className="absolute inset-y-0 left-0 w-0 bg-indigo-500 transition-all group-hover:w-full"></span>
-                  <span className="flex relative text-sm font-medium md:p-1 text-white transition-colors group-hover:text-white">
-                    Login
-                  </span>
-                </p>
-              </button>
-            )}
-          </NavLink>
-        </div>
+        />
+
+        {/* Spinner + pulse while loading */}
+        {loading ? (
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* Rounded avatar pulse */}
+            <div className="relative flex justify-center items-center md:w-10 md:h-10 w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-300 animate-pulse">
+              <div className="absolute w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+            {/* Spinner */}
+            <button className="flex text-red-500 cursor-pointer items-center gap-2 hover:bg-red-500 hover:text-white py-1 px-2 rounded-lg transition-all duration-300">
+              <IoMdLogOut size={25} />
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* Profile Image */}
+            <img
+              data-tooltip-id="user-tooltip"
+              data-tooltip-content={user?.displayName}
+              className="md:w-10 md:h-10 w-8 h-8 cursor-pointer rounded-full"
+              src={user?.photoURL ? user.photoURL : userLogo}
+              alt="user"
+            />
+            <NavLink to="/login">
+              {user ? (
+                <button
+                  onClick={handleLogout}
+                  className="flex text-red-500 cursor-pointer items-center gap-2 hover:bg-red-500 hover:text-white py-1 px-2 rounded-lg transition-all duration-300"
+                  data-tooltip-id="logout-tooltip"
+                  data-tooltip-content="Logout"
+                >
+                  <IoMdLogOut size={25} />
+                </button>
+              ) : (
+                <button
+                  className="flex items-center"
+                  data-tooltip-id="login-tooltip"
+                  data-tooltip-content="Login to your account"
+                >
+                  <p className="group relative inline-block overflow-hidden bg-[#1fbb10ea] rounded-lg px-4 py-1.5 outline-none">
+                    <span className="absolute inset-y-0 left-0 w-0 bg-indigo-500 transition-all group-hover:w-full"></span>
+                    <span className="flex relative text-sm font-medium md:p-1 text-white transition-colors group-hover:text-white">
+                      Login
+                    </span>
+                  </p>
+                </button>
+              )}
+            </NavLink>
+          </div>
+        )}
       </div>
 
       {/* ✅ Tooltips */}
