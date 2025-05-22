@@ -29,7 +29,7 @@ const GoogleBtn = ({ title }) => {
         <button
           onClick={handleGoogleSignIn}
           type="button"
-          className="flex items-center justify-center w-full p-3 gap-4 border rounded-md border-gray-600 cursor-pointer mb-5 hover:bg-gray-600 transition-all duration-300"
+          className="flex items-center justify-center w-full p-2 gap-4 bg-gray-300 rounded-md  cursor-pointer mb-5 hover:bg-white transition-all duration-300 text-black"
         >
           <FcGoogle
             className="cursor-pointer transition-all duration-200"

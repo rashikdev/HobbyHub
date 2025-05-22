@@ -27,9 +27,12 @@ const GroupCard = ({ group }) => {
         Next event: <span className="text-blue-500">{group.startDate}</span>
       </p>
       <Link to={`/group/${group._id}`}>
-        <button className="mt-4 w-full bg-blue-500 text-white py-1 rounded-full hover:bg-blue-600 cursor-pointer group">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="mt-4 w-full bg-blue-500 text-white py-1 rounded-full hover:bg-blue-600 cursor-pointer group"
+        >
           See More{" "}
-          <span className="inline-block ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-200">
+          <span className="inline-block md:ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-200">
             →
           </span>
         </button>

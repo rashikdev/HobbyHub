@@ -14,7 +14,7 @@ const Slider = () => {
   ];
 
   return (
-    <div className="w-full relative my-10 rounded-xl overflow-hidden shadow-xl">
+    <div className="w-full relative overflow-hidden shadow-xl mb-10">
       <Carousel
         showThumbs={false}
         autoPlay
@@ -28,14 +28,14 @@ const Slider = () => {
             <img
               src={data.image}
               alt="Slider visual"
-              className="w-full rounded-2xl md:h-[600px] object-cover"
+              className="w-full md:h-[600px]"
             />
           </div>
         ))}
       </Carousel>
 
       {/* Overlay for background tint */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/30 to-black/50 backdrop-blur-[3px] z-10 rounded-2xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/30 to-black/50 backdrop-blur-[3px] z-10" />
 
       <div className="absolute top-1/2 left-1/2 z-20 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">
         <h1 className="text-white text-2xl md:text-4xl font-extrabold drop-shadow-md">

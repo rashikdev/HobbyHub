@@ -36,8 +36,8 @@ const Navbar = () => {
           </ul>
         </div>
         <NavLink className="flex items-center" to="/">
-          <img className="md:w-10 w-8 rounded-full" src={logo} alt="" />
-          <h2 className="font-bold text-2xl md:ml-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          <img className="md:w-10 w-7 rounded-full" src={logo} alt="" />
+          <h2 className="font-bold text-xl md:text-2xl md:ml-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
             HobbyHub
           </h2>
         </NavLink>
@@ -91,16 +91,18 @@ const Navbar = () => {
               isActive
                 ? "bg-[#1A80E5] py-2 px-3 rounded-xl font-semibold text-white"
                 : ""
-            } hidden lg:block mr-5`
+            } hidden lg:block mr-3`
           }
         >
           My Groups
         </NavLink>
 
-        <ThemeToggle
-          data-tooltip-id="theme-tooltip"
-          data-tooltip-content="Change Theme"
-        />
+        <div className="-mr-2 md:mr-0">
+          <ThemeToggle
+            data-tooltip-id="theme-tooltip"
+            data-tooltip-content="Change Theme"
+          />
+        </div>
 
         {/* Spinner + pulse while loading */}
         {loading ? (

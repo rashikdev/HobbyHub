@@ -26,11 +26,11 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-100px)] bg-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div className="my-6 min-h-[calc(100vh-300px)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 relative">
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
 
-        <div className="relative bg-white py-10 px-6 sm:px-10 sm:py-12 shadow-lg rounded-2xl">
+        <div className="relative bg-[#39f7cee7] py-10 px-6 sm:px-10 sm:py-12 shadow-lg rounded-2xl">
           <h2 className="mb-6 text-center text-3xl font-extrabold text-gray-900">
             Login
           </h2>
@@ -80,9 +80,9 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center bg-cyan-500 text-white py-2 px-4 rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400"
+                className="w-full flex justify-center bg-indigo-400 text-white py-2 px-4 rounded-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400"
               >
-                Submit
+                Login
               </button>
             </div>
           </form>

@@ -17,11 +17,13 @@ const Home = () => {
   );
 
   return (
-    <div className="w-11/12 mx-auto space-y-4">
+    <div>
       <Slider />
-      <FeaturedGroup groups={featuredGroups} />
-      <NewestGroup groups={newestGroups} />
-      <TestimonialsSection></TestimonialsSection>
+      <div className="w-11/12 mx-auto space-y-4">
+        <FeaturedGroup groups={featuredGroups} />
+        <NewestGroup groups={newestGroups} />
+        <TestimonialsSection></TestimonialsSection>
+      </div>
     </div>
   );
 };
