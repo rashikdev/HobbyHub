@@ -5,6 +5,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import nodata from "../assets/nodata.jpg";
 
 const MyGroup = () => {
   const { user } = React.useContext(AuthContext);
@@ -65,7 +66,7 @@ const MyGroup = () => {
       ) : groups.length === 0 ? (
         <div className="text-center mt-10">
           <img
-            src="/no-data.svg"
+            src={nodata}
             alt="No groups"
             className="mx-auto w-40 opacity-80"
           />
@@ -76,7 +77,7 @@ const MyGroup = () => {
             Start by creating your first group!
           </p>
           <NavLink to="/createGroup">
-            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+            <button className="mt-4 text-white px-4 py-2 rounded-md bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 cursor-pointer hover:shadow-[0_0_20px_#F75A5A] hover:scale-95 transition-all">
               Create Group
             </button>
           </NavLink>

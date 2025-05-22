@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
         Component: Register,
       },
       {
-        path: "/all-groups",
+        path: "/allGroups",
         Component: AllGroup,
         loader: () => fetch("/groupsData.json"),
         hydrateFallbackElement: <LoadingPage></LoadingPage>,

@@ -30,7 +30,7 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-40 py-4 shadow space-y-3 font-medium"
           >
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/all-groups">All Groups</NavLink>
+            <NavLink to="/allGroups">All Groups</NavLink>
             <NavLink to="/createGroup">Create Group</NavLink>
             <NavLink to="/myGroup">My Groups</NavLink>
           </ul>
@@ -58,7 +58,7 @@ const Navbar = () => {
           Home
         </NavLink>
         <NavLink
-          to="/all-groups"
+          to="/allGroups"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className={({ isActive }) =>
             `${

@@ -15,7 +15,7 @@ const Footer = () => {
               HobbyHub
             </h2>
           </NavLink>
-          <p className="text-sm">
+          <p className="text-sm mt-2">
             Discover, join, or create hobby-based groups. Build your community
             around your passion.
           </p>
@@ -26,22 +26,31 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/" className="hover:underline">
+              <Link to="/" className="hover:underline hover:text-blue-500">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/all-groups" className="hover:underline">
+              <Link
+                to="/allGroups"
+                className="hover:underline hover:text-blue-500"
+              >
                 All Groups
               </Link>
             </li>
             <li>
-              <Link to="/createGroup" className="hover:underline">
+              <Link
+                to="/createGroup"
+                className="hover:underline hover:text-blue-500"
+              >
                 Create Group
               </Link>
             </li>
             <li>
-              <Link to="/myGroup" className="hover:underline">
+              <Link
+                to="/myGroup"
+                className="hover:underline hover:text-blue-500"
+              >
                 My Groups
               </Link>
             </li>
@@ -61,17 +70,33 @@ const Footer = () => {
         {/* Social Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-          <div className="flex space-x-4 text-lg">
-            <a href="#" className="hover:text-gray-300">
+          <div className="flex space-x-4 text-2xl">
+            <a
+              target="_blank"
+              href="https://www.facebook.com/share/16Fjh4kbAR/"
+              className="hover:text-blue-500"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              target="_blank"
+              href="https://x.com/RashikKhan513"
+              className="hover:text-blue-500"
+            >
               <FaTwitter />
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/happyprincerashik/profilecard/?igsh=MXZhbXZ6dzExd3o0dA=="
+              className="hover:text-blue-500"
+            >
               <FaInstagram />
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              target="_blank"
+              href="https://github.com/rashik218"
+              className="hover:text-blue-500"
+            >
               <FaGithub />
             </a>
           </div>
