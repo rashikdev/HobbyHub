@@ -41,7 +41,9 @@ export const router = createBrowserRouter([
         path: "/updateGroup/:id",
         Component: EditGroup,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/groups/${params.id}`),
+          fetch(
+            `https://hobby-hub-server-ashen.vercel.app/groups/${params.id}`
+          ),
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
       },
       {

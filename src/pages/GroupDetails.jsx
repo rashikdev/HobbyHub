@@ -10,7 +10,7 @@ const GroupDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:5000/groups")
+    fetch("https://hobby-hub-server-ashen.vercel.app/groups")
       .then((res) => res.json())
       .then((data) => {
         setGroups(data);

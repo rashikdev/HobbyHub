@@ -10,7 +10,7 @@ const EditGroup = () => {
     const form = e.target;
     const formData = new FormData(form);
     const updatedGroup = Object.fromEntries(formData.entries());
-    fetch(`http://localhost:5000/groups/${id}`, {
+    fetch(`https://hobby-hub-server-ashen.vercel.app/groups/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
