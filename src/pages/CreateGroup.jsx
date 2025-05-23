@@ -112,10 +112,10 @@ const CreateGroup = () => {
               <option disabled value="">
                 How many people can join?
               </option>
-              <option>200+ members</option>
-              <option>500+ members</option>
-              <option>1,000+ members</option>
-              <option>2,000+ members</option>
+              <option>200</option>
+              <option>500</option>
+              <option>1,000</option>
+              <option>2,000</option>
             </select>
           </div>
 

@@ -22,7 +22,7 @@ const GroupCard = ({ group }) => {
       <h3 className="font-semibold text-[15px] text-black">
         {group.groupName}
       </h3>
-      <p className="text-sm text-gray-600 font-semibold">{group.members}</p>
+      <p className="text-sm text-gray-600 font-semibold">Max: {group.members} members</p>
       <p className="text-sm text-orange-500 font-semibold">
         Next event: <span className="text-blue-500">{group.startDate}</span>
       </p>

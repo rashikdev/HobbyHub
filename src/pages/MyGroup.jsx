@@ -57,14 +57,16 @@ const MyGroup = () => {
 
   return (
     <div className="w-full min-h-[calc(100vh-370px)] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h2 className="font-bold mb-10 text-fuchsia-500 font-[Playwrite_HU] md:hidden">My Groups</h2>
+      <h2 className="font-bold mb-10 text-fuchsia-500 font-[Playwrite_HU] md:hidden">
+        My Groups
+      </h2>
       {loading ? (
         <div className="min-h-[calc(100vh-457px)] flex items-center justify-center gap-2">
-          <span className="text-xl text-blue-500">Loading Groups</span>
+          <span className="md:text-xl text-blue-500">Loading Groups</span>
           <div className="w-7 h-7 border-4 border-blue-500 border-t-red-500 border-r-green-500 border-b-yellow-500 rounded-full animate-spin"></div>
         </div>
       ) : groups.length === 0 ? (
-        <div className="text-center md:mt-50">
+        <div className="text-center md:mt-20">
           <img
             src={nodata}
             alt="No groups"
@@ -73,35 +75,30 @@ const MyGroup = () => {
           <h2 className="text-xl md:text-2xl font-semibold mt-4">
             No groups created yet
           </h2>
-          <p className="mt-2">
-            Start by creating your first group!
-          </p>
+          <p className="mt-2">Start by creating your first group!</p>
           <NavLink to="/createGroup">
-            <button className="mt-4 text-white px-4 py-2 md:px-8 md:py-3 rounded-md bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 cursor-pointer hover:shadow-[0_0_20px_#F75A5A] hover:scale-95 transition-all md:text-xl">
+            <button className="mt-4 text-white px-4 py-2 md:px-5 rounded-md bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 cursor-pointer hover:shadow-[0_0_20px_#F75A5A] hover:scale-95 transition-all md:text-xl">
               Create Group
             </button>
           </NavLink>
         </div>
       ) : (
         <div className="overflow-x-auto rounded-lg shadow">
-          <div className="hidden md:block">
+          <div className="hidden md:block mt-10">
             <table className="min-w-full bg-gradient-to-br from-orange-400 via-blue-200 to-red-200 text-sm sm:text-base text-left text-gray-700">
               <thead className="font-semibold">
-                <tr>
+                <tr className="">
                   <th className="px-6 py-3">Group Name</th>
                   <th className="px-6 py-3">Description</th>
                   <th className="px-6 py-3">Meeting Location</th>
                   <th className="px-6 py-3">Members</th>
                   <th className="px-6 py-3">Start Date</th>
-                  <th className="px-6 py-3 text-center">Action</th>
+                  <th className="pl-9 py-3">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {groups.map((group, index) => (
-                  <tr
-                    key={index}
-                    className="border-t transition-colors"
-                  >
+                  <tr key={index} className="border-t transition-colors">
                     <td className="px-6 py-4 font-medium">{group.groupName}</td>
                     <td className="px-6 py-4 text-blue-600 md:w-[300px]">
                       {group.description}
@@ -109,20 +106,20 @@ const MyGroup = () => {
                     <td className="px-6 py-4">{group.location}</td>
                     <td className="px-6 py-4">{group.members}</td>
                     <td className="px-6 py-4">{group.startDate}</td>
-                    <td>
+                    <td className="">
                       <Link
                         to={`/updateGroup/${group._id}`}
-                        className="px-6 py-4 space-x-3"
+                        className="px-6"
                       >
-                        <button className="cursor-pointer text-blue-600">
+                        <button className="cursor-pointer hover:text-red-500 text-blue-600 hover:bg-blue-300 rounded-full transition-all duration-200 p-1">
                           <GrFormEdit size={25} />
                         </button>
                       </Link>
                       <button
                         onClick={() => handleDelete(group._id)}
-                        className="cursor-pointer"
+                        className="cursor-pointer hover:bg-red-400 text-red-600 hover:text-white rounded-full  transition-all duration-200 p-1"
                       >
-                        <MdDeleteForever size={24} color="red" />
+                        <MdDeleteForever size={24} />
                       </button>
                     </td>
                   </tr>
@@ -134,7 +131,7 @@ const MyGroup = () => {
             {groups.map((group, index) => (
               <div
                 key={index}
-                className="bg-white p-4 border rounded-lg shadow-sm flex flex-col gap-2"
+                className="bg-white p-4 border rounded-lg shadow-sm flex flex-col gap-2 bg-gradient-to-br from-orange-400 via-blue-200 to-red-200"
               >
                 <div className="flex justify-between">
                   <span className="font-semibold">Group Name:</span>

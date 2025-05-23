@@ -29,10 +29,30 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-40 py-4 shadow space-y-3 font-medium"
           >
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/allGroups">All Groups</NavLink>
-            <NavLink to="/createGroup">Create Group</NavLink>
-            <NavLink to="/myGroup">My Groups</NavLink>
+            <NavLink
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              to="/"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              to="/allGroups"
+            >
+              All Groups
+            </NavLink>
+            <NavLink
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              to="/createGroup"
+            >
+              Create Group
+            </NavLink>
+            <NavLink
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              to="/myGroup"
+            >
+              My Groups
+            </NavLink>
           </ul>
         </div>
         <NavLink className="flex items-center" to="/">

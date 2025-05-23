@@ -41,11 +41,11 @@ const Register = () => {
             navigate("/");
           })
           .catch((error) => {
-            console.log(error);
+            // console.log(error);
           });
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error("This email already exists");
       });
   };
 
