@@ -66,7 +66,7 @@ const MyGroup = () => {
           <div className="w-7 h-7 border-4 border-blue-500 border-t-red-500 border-r-green-500 border-b-yellow-500 rounded-full animate-spin"></div>
         </div>
       ) : groups.length === 0 ? (
-        <div className="text-center md:mt-20">
+        <div className="text-center md:my-18">
           <img
             src={nodata}
             alt="No groups"
@@ -77,14 +77,14 @@ const MyGroup = () => {
           </h2>
           <p className="mt-2">Start by creating your first group!</p>
           <NavLink to="/createGroup">
-            <button className="mt-4 text-white px-4 py-2 md:px-5 rounded-md bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 cursor-pointer hover:shadow-[0_0_20px_#F75A5A] hover:scale-95 transition-all md:text-xl">
+            <button className="mt-4 text-white px-4 py-2 md:px-5 rounded-md bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 cursor-pointer hover:shadow-[0_0_20px_#F75A5A] hover:scale-95 transition-all du md:text-xl">
               Create Group
             </button>
           </NavLink>
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-lg shadow">
-          <div className="hidden md:block mt-10">
+        <div className="overflow-x-auto rounded-lg shadow mt-8">
+          <div className="hidden md:block">
             <table className="min-w-full bg-gradient-to-br from-orange-400 via-blue-200 to-red-200 text-sm sm:text-base text-left text-gray-700">
               <thead className="font-semibold">
                 <tr className="">
