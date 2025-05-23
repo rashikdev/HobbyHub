@@ -7,13 +7,14 @@ const AllGroup = () => {
   const [groups, setGroups] = useState([]);
   const localGroups = useLoaderData();
   useEffect(() => {
-    fetch("http://localhost:5000/groups")
+    fetch("https://hobby-hub-server-ashen.vercel.app/groups")
       .then((res) => res.json())
       .then((data) => {
         setGroups(data);
       });
   }, []);
   const allGroups = [...groups, ...localGroups];
+  console.log(allGroups.length);
   return (
     <div className="">
       <Slider></Slider>
