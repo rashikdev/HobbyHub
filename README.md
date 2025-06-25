@@ -56,7 +56,7 @@
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/your-username/hobbyhub.git
+git clone https://github.com/rashikdev/hobbyhub.git
 cd hobbyhub
 ```
 
