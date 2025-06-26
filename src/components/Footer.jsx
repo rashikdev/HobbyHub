@@ -94,7 +94,7 @@ const Footer = () => {
             </a>
             <a
               target="_blank"
-              href="https://github.com/rashik218"
+              href="https://github.com/rashikdev"
               className="hover:text-blue-500"
             >
               <FaGithub />

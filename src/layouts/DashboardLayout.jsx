@@ -4,7 +4,6 @@ import { NavLink, Outlet, useLoaderData } from "react-router";
 import logo from "../assets/logo.png";
 import { FaPeopleGroup } from "react-icons/fa6";
 import ThemeToggle from "../components/ThemeToggle";
-import toast from "react-hot-toast";
 import { MdGroups, MdOutlineContactMail } from "react-icons/md";
 import { RiInfoCardLine } from "react-icons/ri";
 const DashboardLayout = () => {

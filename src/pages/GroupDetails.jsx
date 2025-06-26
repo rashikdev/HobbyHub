@@ -57,14 +57,11 @@ const GroupDetails = () => {
         </div>
 
         {/* Text details */}
-        <div className="space-y-4">
+        <div className="space-y-2">
           <DetailRow label="Group Name" value={mergedGroup.groupName} />
           <DetailRow label="Description" value={mergedGroup.description} />
           <DetailRow label="Category" value={mergedGroup.hobbyCategory} />
-          <DetailRow
-            label="Meeting Location"
-            value={mergedGroup.meetingLocation}
-          />
+          <DetailRow label="Meeting Location" value={mergedGroup.location} />
           <DetailRow label="Max Members" value={mergedGroup.members} />
           <DetailRow label="Start Date" value={mergedGroup.startDate} />
         </div>
@@ -81,7 +78,7 @@ const GroupDetails = () => {
             <button
               disabled={isJoined}
               onClick={handleJoin}
-              className={`px-6 py-2 rounded-xl font-semibold transition-all ${
+              className={`px-6 py-2 rounded-md font-semibold transition-all ${
                 isJoined
                   ? "bg-teal-400 text-white cursor-not-allowed"
                   : "bg-indigo-600 hover:bg-indigo-700 text-white"
@@ -96,7 +93,7 @@ const GroupDetails = () => {
                   setIsJoined(false);
                   toast.success("You have left the group.");
                 }}
-                className="px-6 py-2 rounded-xl font-semibold bg-red-500 hover:bg-red-600 text-white"
+                className="px-6 py-2 rounded-md font-semibold bg-red-500 hover:bg-red-600 text-white"
               >
                 Leave Group
               </button>
@@ -111,8 +108,8 @@ const GroupDetails = () => {
 // Reusable detail row component
 const DetailRow = ({ label, value }) => (
   <div className="flex flex-col">
-    <span className="text-sm font-semibold ">{label}</span>
-    <span className="text-base font-medium text-gray-400">
+    <span className="font-semibold ">{label}</span>
+    <span className="text-base font-medium text-gray-400 leading-5">
       {value || "N/A"}
     </span>
   </div>

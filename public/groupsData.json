@@ -5,9 +5,10 @@
     "members": "1,000",
     "startDate": "2025-08-10",
     "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
-    "hobbyCategory": "featuredGroup",
+    "groupType": "featuredGroup",
     "description": "Explore the Bay Area's most scenic hiking trails every weekend with fellow enthusiasts.",
-    "location": "Rangpur"
+    "location": "Rangpur",
+    "category": "Hiking"
   },
   {
     "_id": "2",
@@ -15,9 +16,10 @@
     "members": "500",
     "startDate": "2025-07-22",
     "image": "https://i.postimg.cc/NGy6XhDx/2150062128.jpg",
-    "hobbyCategory": "featuredGroup",
+    "groupType": "featuredGroup",
     "description": "Join lively discussions on a wide range of books with readers from all walks of life.",
-    "location": "Dhaka"
+    "location": "Dhaka",
+    "category": "Reading"
   },
   {
     "_id": "3",
@@ -25,9 +27,10 @@
     "members": "850",
     "startDate": "2025-08-26",
     "image": "https://i.postimg.cc/bNhZw4Br/142.jpg",
-    "hobbyCategory": "featuredGroup",
+    "groupType": "featuredGroup",
     "description": "Capture moments and improve your photography skills every weekend with like-minded creatives.",
-    "location": "Khulna"
+    "location": "Khulna",
+    "category": "Photography"
   },
   {
     "_id": "4",
@@ -35,9 +38,10 @@
     "members": "300",
     "startDate": "2025-08-01",
     "image": "https://i.postimg.cc/44bJByW4/2714.jpg",
-    "hobbyCategory": "featuredGroup",
+    "groupType": "featuredGroup",
     "description": "Unleash your creativity with others through collaborative painting sessions and art challenges.",
-    "location": "Rajshahi"
+    "location": "Rajshahi",
+    "category": "Drawing & Painting"
   },
   {
     "_id": "5",
@@ -45,9 +49,10 @@
     "members": "1,200",
     "startDate": "2025-08-23",
     "image": "https://i.postimg.cc/J4YC2kZ8/2151847302.jpg",
-    "hobbyCategory": "featuredGroup",
+    "groupType": "featuredGroup",
     "description": "Join runners across the city for weekly group runs and fitness challenges.",
-    "location": "Dhaka"
+    "location": "Dhaka",
+    "category": "Running"
   },
   {
     "_id": "6",
@@ -55,9 +60,10 @@
     "members": "600",
     "startDate": "2025-08-29",
     "image": "https://i.postimg.cc/GhH59ST0/20510.jpg",
-    "hobbyCategory": "featuredGroup",
+    "groupType": "featuredGroup",
     "description": "Discover flavors and share cooking experiences in our evening culinary sessions.",
-    "location": "Tangail"
+    "location": "Tangail",
+    "category": "Cooking"
   },
   {
     "_id": "7",
@@ -65,9 +71,10 @@
     "image": "https://i.postimg.cc/MKfXtqf9/4697.jpg",
     "members": "800",
     "startDate": "2025-09-01",
-    "hobbyCategory": "newestGroup",
+    "groupType": "newestGroup",
     "description": "Hike and capture breathtaking mountain landscapes with fellow photography lovers.",
-    "location": "Bogura"
+    "location": "Bogura",
+    "category": "Photography"
   },
   {
     "_id": "8",
@@ -75,9 +82,10 @@
     "image": "https://i.postimg.cc/vTsMzFJN/Screenshot-2025-05-20-121745.png",
     "members": "1,200",
     "startDate": "2025-06-10",
-    "hobbyCategory": "newestGroup",
+    "groupType": "newestGroup",
     "description": "Explore the city through sketching meetups and develop your artistic vision.",
-    "location": "Borisal"
+    "location": "Borisal",
+    "category": "Drawing & Painting"
   },
   {
     "_id": "9",
@@ -85,9 +93,10 @@
     "image": "https://i.postimg.cc/MHwFnWBd/2151747440.jpg",
     "members": "650",
     "startDate": "2025-06-05",
-    "hobbyCategory": "newestGroup",
+    "groupType": "newestGroup",
     "description": "Perfect for beginners looking to start hiking and connect with friendly nature lovers.",
-    "location": "Dhaka"
+    "location": "Dhaka",
+    "category": "Hiking"
   },
   {
     "_id": "10",
@@ -95,9 +104,10 @@
     "image": "https://i.postimg.cc/9Qt8k4Db/2147827006.jpg",
     "members": "500",
     "startDate": "2025-09-12",
-    "hobbyCategory": "newestGroup",
+    "groupType": "newestGroup",
     "description": "Help preserve marine life by joining our regular beach and coastline cleanup events.",
-    "location": "Rangpur"
+    "location": "Rangpur",
+    "category": "Cleaning"
   },
   {
     "_id": "11",
@@ -105,9 +115,10 @@
     "image": "https://i.postimg.cc/9QpbpvkN/260.jpg",
     "members": "950",
     "startDate": "2025-06-15",
-    "hobbyCategory": "newestGroup",
+    "groupType": "newestGroup",
     "description": "Learn and share drone videography techniques through exciting flight meetups.",
-    "location": "Rajshahi"
+    "location": "Rajshahi",
+    "category": "Videography"
   },
   {
     "_id": "12",
@@ -115,8 +126,9 @@
     "image": "https://i.postimg.cc/SxJRT91F/Screenshot-2025-05-20-122805.png",
     "members": "1,100",
     "startDate": "2025-06-20",
-    "hobbyCategory": "newestGroup",
+    "groupType": "newestGroup",
     "description": "Cycle the city's best routes every weekend and bond over post-ride snacks and chats.",
-    "location": "Dhaka"
+    "location": "Dhaka",
+    "category": "Cycling"
   }
 ]

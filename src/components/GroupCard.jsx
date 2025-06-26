@@ -43,10 +43,10 @@ const GroupCard = ({ group }) => {
         <Link to={`/group/${_id}`}>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-full hover:bg-indigo-700 transition-all group"
+            className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-all group"
           >
             See More{" "}
-            <span className="inline-block ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">
+            <span className="inline-block ml-1 group-hover:translate-x-1 transition-all duration-200">
               →
             </span>
           </button>

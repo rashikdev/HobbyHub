@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-base-300/60 backdrop-blur-md py-4 z-50 px-13 flex justify-between items-center shadow-md font-bold sticky top-0">
+    <div className="bg-base-300/60 backdrop-blur-md py-4 z-50 md:px-13 px-2 flex justify-between items-center shadow-md font-bold sticky top-0">
       {/* nav items */}
       <div className="flex items-center gap-1">
         <div className="dropdown lg:hidden block">

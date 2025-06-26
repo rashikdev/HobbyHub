@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import toast from "react-hot-toast";
+import NewestGroup from "../components/NewestGroup";
 
 const CreateGroup = () => {
   const { user } = use(AuthContext);
@@ -11,21 +12,22 @@ const CreateGroup = () => {
 
     const formData = new FormData(form);
     const newGroup = Object.fromEntries(formData.entries());
-
-    fetch("https://hobby-hub-server-ashen.vercel.app/groups", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newGroup),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          toast.success("Group created successfully");
-          form.reset();
-        }
-      });
+    const group = { ...newGroup, groupType: "newestGroup" };
+    console.log(group);
+    // fetch("https://hobby-hub-server-ashen.vercel.app/groups", {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(group),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.insertedId) {
+    //       toast.success("Group created successfully");
+    //       form.reset();
+    //     }
+    //   });
   };
   return (
     <div className="grid md:grid-cols-16">
@@ -41,7 +43,9 @@ const CreateGroup = () => {
       </div>
       <div className="p-6 rounded-lg col-span-9">
         <form onSubmit={handleCreateGroup} className="space-y-4">
-          <h2 className="text-2xl font-bold mb-1 md:hidden">Create Your Group</h2>
+          <h2 className="text-2xl font-bold mb-1 md:hidden">
+            Create Your Group
+          </h2>
           <p className="mb-6 text-xs md:hidden">
             This is your group's details page. Here you can set the group's
             name, hobby category, description, and other details.
@@ -61,14 +65,12 @@ const CreateGroup = () => {
           <div>
             <label className="block font-medium">Hobby Category</label>
             <select
-              name="hobbyCategory"
+              name="category"
               className="select select-bordered w-full"
               defaultValue=""
               required
             >
-              <option disabled value="">
-                Select a hobby category
-              </option>
+              <option disabled>Select a hobby category</option>
               <option>Drawing & Painting</option>
               <option>Photography</option>
               <option>Video Gaming</option>
@@ -77,6 +79,7 @@ const CreateGroup = () => {
               <option>Cooking</option>
               <option>Reading</option>
               <option>Writing</option>
+              <option>Cleaning</option>
             </select>
           </div>
 

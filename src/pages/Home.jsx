@@ -10,11 +10,11 @@ const Home = () => {
   const allGroups = useLoaderData();
 
   const featuredGroups = allGroups.filter(
-    (group) => group.hobbyCategory === "featuredGroup"
+    (group) => group.groupType === "featuredGroup"
   );
 
   const newestGroups = allGroups.filter(
-    (group) => group.hobbyCategory === "newestGroup"
+    (group) => group.groupType === "newestGroup"
   );
 
   return (
