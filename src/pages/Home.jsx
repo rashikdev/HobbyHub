@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Slider from "../components/Banner";
 import { useLoaderData } from "react-router";
 import FeaturedGroup from "../components/FeaturedGroup";
 import NewestGroup from "../components/NewestGroup";
 import TestimonialsSection from "../components/TestimonialsSection";
 import FaqSection from "../components/FaqSection";
+import Banner from "../components/Banner";
 // import { Twirl as Hamburger } from "hamburger-react";
 const Home = () => {
   const allGroups = useLoaderData();
@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <div>
-      <Slider />
+      <Banner />
       <div className="w-11/12 mx-auto space-y-14">
         <FeaturedGroup groups={featuredGroups} />
         <NewestGroup groups={newestGroups} />

@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-base-300/60 backdrop-blur-md py-4 z-50 px-5 flex justify-between items-center shadow-md font-bold sticky top-0">
+    <div className="bg-base-300/60 backdrop-blur-md py-4 z-50 px-13 flex justify-between items-center shadow-md font-bold sticky top-0">
       {/* nav items */}
       <div className="flex items-center gap-1">
         <div className="dropdown lg:hidden block">
@@ -98,18 +98,20 @@ const Navbar = () => {
         >
           All Groups
         </NavLink>
-        <NavLink
-          to="/dashboard"
-          className={({ isActive }) =>
-            `${
-              isActive
-                ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
-                : ""
-            } hidden lg:block`
-          }
-        >
-          Dashboard
-        </NavLink>
+        {user && (
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              `${
+                isActive
+                  ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
+                  : ""
+              } hidden lg:block`
+            }
+          >
+            Dashboard
+          </NavLink>
+        )}
         <NavLink
           to="/about"
           className={({ isActive }) =>

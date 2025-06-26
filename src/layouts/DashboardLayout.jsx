@@ -4,20 +4,11 @@ import { NavLink, Outlet, useLoaderData } from "react-router";
 import logo from "../assets/logo.png";
 import { FaPeopleGroup } from "react-icons/fa6";
 import ThemeToggle from "../components/ThemeToggle";
-import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
-import { MdGroups } from "react-icons/md";
+import { MdGroups, MdOutlineContactMail } from "react-icons/md";
+import { RiInfoCardLine } from "react-icons/ri";
 const DashboardLayout = () => {
-  const { logoutUser } = useAuth();
   const data = useLoaderData();
-
-  const hanleLogout = () => {
-    logoutUser()
-      .then(() => {
-        toast.success("Logout Successfully");
-      })
-      .catch((error) => console.log(error));
-  };
 
   return (
     <div className="lg:flex">
@@ -111,29 +102,38 @@ const DashboardLayout = () => {
             </li>
             <li>
               <NavLink
-                to="/dashboard/update-profile"
+                to="/about"
                 className={({ isActive }) =>
                   isActive ? "text-primary font-extrabold" : ""
                 }
               >
-                <FaUserEdit /> My Profile
+                <RiInfoCardLine /> About Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-extrabold" : ""
+                }
+              >
+                <MdOutlineContactMail /> Contact
               </NavLink>
             </li>
           </ul>
-          <div className="absolute bottom-4 left-4">
+          <div className="absolute bottom-5 left-5">
             <ThemeToggle></ThemeToggle>
           </div>
-          <div className="absolute bottom-4 right-4">
-            <button
-              onClick={hanleLogout}
-              className="bg-red-500 text-white px-4 py-1 rounded cursor-pointer"
-            >
-              Logout
-            </button>
+          <div className="absolute bottom-4 md:right-5 right-30">
+            <li className="menu py-0 text-xl">
+              <NavLink to="/dashboard/profile" className="bg-gray-300 px-8">
+                <FaUserEdit /> My Profile
+              </NavLink>
+            </li>
           </div>
         </div>
       </div>
-      <div className="w-full h-screen p-10 space-y-3">
+      <div className="w-full h-screen md:p-8 p-5 space-y-3">
         <Outlet context={data}></Outlet>
       </div>
     </div>

@@ -16,6 +16,7 @@ import ContactUs from "../pages/ContactUs";
 import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardHome from "../layouts/DashboardHome";
 import DashboardAllGroup from "../components/DashboardAllGroup";
+import Profile from "../components/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
             `https://hobby-hub-server-ashen.vercel.app/groups/${params.id}`
           ),
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
+      },
+      {
+        path: "profile",
+        Component: Profile,
       },
     ],
   },

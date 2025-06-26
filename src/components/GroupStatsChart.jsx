@@ -24,7 +24,7 @@ const GroupGrowthChart = ({ data }) => {
   ];
 
   return (
-    <div className="p-6 rounded-xl shadow-md mt-6 h-[300px] md:h-[400px] border-l-2 border-t-2 border-indigo-500">
+    <div className="md:p-8 p-7 rounded-xl shadow-md h-[400px] border-l-2 border-t-2 border-indigo-500">
       <h2 className="text-2xl font-bold text-center mb-4">
         📈 Group Growth Over Time
       </h2>
