@@ -41,17 +41,25 @@ const Navbar = () => {
             >
               All Groups
             </NavLink>
+            {user && (
+              <NavLink
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                to="/dashboard"
+              >
+                Dashboard
+              </NavLink>
+            )}
             <NavLink
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              to="/createGroup"
+              to="/about"
             >
-              Create Group
+              About Us
             </NavLink>
             <NavLink
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              to="/myGroup"
+              to="/contact"
             >
-              My Groups
+              Contact
             </NavLink>
           </ul>
         </div>
@@ -70,7 +78,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-gradient-to-br from-orange-500 via-pink-500 to-red-400 py-1 px-2 rounded-bl-2xl rounded-tr-2xl font-semibold text-white"
+                ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
                 : ""
             } hidden lg:block`
           }
@@ -83,7 +91,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-gradient-to-br from-orange-500 via-pink-500 to-red-400 py-1 px-2 rounded-bl-2xl rounded-tr-2xl font-semibold text-white"
+                ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
                 : ""
             } hidden lg:block`
           }
@@ -91,12 +99,48 @@ const Navbar = () => {
           All Groups
         </NavLink>
         <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            `${
+              isActive
+                ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
+                : ""
+            } hidden lg:block`
+          }
+        >
+          Dashboard
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `${
+              isActive
+                ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
+                : ""
+            } hidden lg:block`
+          }
+        >
+          About Us
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `${
+              isActive
+                ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
+                : ""
+            } hidden lg:block`
+          }
+        >
+          Contact
+        </NavLink>
+        {/* <NavLink
           to="/createGroup"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-gradient-to-br from-orange-500 via-pink-500 to-red-400 py-1 px-2 rounded-bl-2xl rounded-tr-2xl font-semibold text-white"
+                ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
                 : ""
             } hidden lg:block`
           }
@@ -109,13 +153,13 @@ const Navbar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "bg-gradient-to-br from-orange-500 via-pink-500 to-red-400 py-1 px-2 rounded-bl-2xl rounded-tr-2xl font-semibold text-white"
+                ? "border-b-2 border-indigo-500 px-2 font-semibold rounded"
                 : ""
             } hidden lg:block mr-3`
           }
         >
           My Groups
-        </NavLink>
+        </NavLink> */}
 
         <div className="-mr-2 md:mr-0">
           <ThemeToggle

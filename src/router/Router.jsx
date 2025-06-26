@@ -11,6 +11,11 @@ import PrivateRoute from "./PrivateRoute";
 import GroupDetails from "../pages/GroupDetails";
 import EditGroup from "../pages/EditGroup";
 import ErrorPage from "../pages/ErrorPage";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
+import DashboardLayout from "../layouts/DashboardLayout";
+import DashboardHome from "../layouts/DashboardHome";
+import DashboardAllGroup from "../components/DashboardAllGroup";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +27,14 @@ export const router = createBrowserRouter([
         Component: Home,
         loader: () => fetch("/groupsData.json"),
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
+      },
+      {
+        path: "about",
+        Component: AboutUs,
+      },
+      {
+        path: "contact",
+        Component: ContactUs,
       },
       {
         path: "/login",
@@ -38,16 +51,7 @@ export const router = createBrowserRouter([
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
       },
       {
-        path: "/updateGroup/:id",
-        Component: EditGroup,
-        loader: ({ params }) =>
-          fetch(
-            `https://hobby-hub-server-ashen.vercel.app/groups/${params.id}`
-          ),
-        hydrateFallbackElement: <LoadingPage></LoadingPage>,
-      },
-      {
-        path: "/group/:id",
+        path: "group/:id",
         loader: () => fetch("/groupsData.json"),
         hydrateFallbackElement: <LoadingPage></LoadingPage>,
         element: (
@@ -56,21 +60,42 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    loader: () => fetch("/groupsData.json"),
+    hydrateFallbackElement: <LoadingPage></LoadingPage>,
+    children: [
       {
-        path: "/createGroup",
-        element: (
-          <PrivateRoute>
-            <CreateGroup></CreateGroup>
-          </PrivateRoute>
-        ),
+        index: true,
+        Component: DashboardHome,
       },
       {
-        path: "/myGroup",
-        element: (
-          <PrivateRoute>
-            <MyGroup></MyGroup>
-          </PrivateRoute>
-        ),
+        path: "all-group",
+        Component: DashboardAllGroup,
+      },
+      {
+        path: "myGroup",
+        Component: MyGroup,
+      },
+      {
+        path: "createGroup",
+        Component: CreateGroup,
+      },
+      {
+        path: "updateGroup/:id",
+        Component: EditGroup,
+        loader: ({ params }) =>
+          fetch(
+            `https://hobby-hub-server-ashen.vercel.app/groups/${params.id}`
+          ),
+        hydrateFallbackElement: <LoadingPage></LoadingPage>,
       },
     ],
   },

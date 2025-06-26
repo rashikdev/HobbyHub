@@ -12,126 +12,110 @@ const GroupDetails = () => {
   useEffect(() => {
     fetch("https://hobby-hub-server-ashen.vercel.app/groups")
       .then((res) => res.json())
-      .then((data) => {
-        setGroups(data);
-      });
+      .then((data) => setGroups(data));
   }, []);
 
-  const group = groups.find((group) => group._id === id);
+  const group = groups.find((g) => g._id === id);
+  const lGroup = localGroups.find((g) => g._id === id);
+  const mergedGroup = { ...group, ...lGroup };
 
-  const lGroup = localGroups.find((group) => group._id === id);
+  const isPastDate = (dateStr) => new Date(dateStr) < new Date();
 
-  const startDate = group?.startDate || lGroup?.startDate;
-
-  const isPastDate = (dateStr) => {
-    const today = new Date();
-    const startDate = new Date(dateStr);
-    return startDate < today;
-  };
   const handleJoin = () => {
-    const startDate = group?.startDate || lGroup?.startDate;
-
-    if (!startDate) {
+    if (!mergedGroup.startDate) {
       toast.error("Start date not available.");
       return;
     }
-
-    if (isPastDate(startDate)) {
+    if (isPastDate(mergedGroup.startDate)) {
       toast.error("This group is no longer active.");
       return;
     }
-    toast.success(
-      `You have joined the group: ${group?.groupName || lGroup?.groupName}`
-    );
+    toast.success(`You have joined the group: ${mergedGroup.groupName}`);
     setIsJoined(true);
   };
 
   return (
-    <div className="max-w-6xl mx-auto bg-gradient-to-br from-orange-300 via-blue-200 to-red-300 shadow-md rounded-xl p-6 my-10 text-black">
-      <h2 className="text-3xl font-bold mb-6 text-indigo-600">Group Details</h2>
-      <div className="md:flex md:gap-5">
-        <div className="w-full relative overflow-hidden flex items-center justify-center">
+    <div className="max-w-6xl mx-auto p-6 my-10  rounded-xl shadow-md">
+      <h2 className="text-3xl font-bold text-indigo-600 mb-6">
+        📄 Group Details
+      </h2>
+
+      <div className="grid md:grid-cols-2 gap-6 items-start">
+        {/* Image section */}
+        <div className="relative overflow-hidden rounded-lg shadow-sm">
           {!loaded && (
-            <div className="absolute inset-0 flex justify-center items-center">
+            <div className="absolute inset-0 bg-white/50 flex items-center justify-center z-10">
               <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
             </div>
           )}
           <img
-            src={lGroup?.image || group?.image}
-            alt="Group"
+            src={mergedGroup.image}
             onLoad={() => setLoaded(true)}
-            className="w-full md:h-80 object-cover rounded-lg mb-6"
+            alt="Group"
+            className="w-full h-80 object-cover rounded-lg"
           />
         </div>
 
-        <div className="space-y-4 p-4">
-          <h3 className="font-bold text-[17px]">
-            Description:{" "}
-            <span className="text-[15px] text-gray-500 font-medium">
-              {lGroup?.description || group?.description}
-            </span>
-          </h3>
-          <h3 className="font-bold text-[17px]">
-            Group Name:{" "}
-            <span className="text-[15px] text-gray-500 font-medium">
-              {lGroup?.groupName || group?.groupName}
-            </span>
-          </h3>
-          <h3 className="font-bold text-[17px]">
-            Hobby Category:{" "}
-            <span className="text-[15px] text-gray-500 font-medium">
-              {lGroup?.hobbyCategory || group?.hobbyCategory}
-            </span>
-          </h3>
-          <h3 className="font-bold text-[17px]">
-            Meeting Location:{" "}
-            <span className="text-[15px] text-gray-500 font-medium">
-              {lGroup?.meetingLocation || group?.meetingLocation}
-            </span>
-          </h3>
-
-          <h3 className="font-bold text-[17px]">
-            Max Members:{" "}
-            <span className="text-[15px] text-gray-500 font-medium">
-              {lGroup?.members || group?.members}
-            </span>
-          </h3>
-
-          <h3 className="font-bold text-[17px]">
-            Start Date:{" "}
-            <span className="text-[15px] text-gray-500 font-medium">
-              {lGroup?.startDate || group?.startDate}
-            </span>
-          </h3>
+        {/* Text details */}
+        <div className="space-y-4">
+          <DetailRow label="Group Name" value={mergedGroup.groupName} />
+          <DetailRow label="Description" value={mergedGroup.description} />
+          <DetailRow label="Category" value={mergedGroup.hobbyCategory} />
+          <DetailRow
+            label="Meeting Location"
+            value={mergedGroup.meetingLocation}
+          />
+          <DetailRow label="Max Members" value={mergedGroup.members} />
+          <DetailRow label="Start Date" value={mergedGroup.startDate} />
         </div>
       </div>
 
-      <div className="mt-8 flex gap-4">
-        <button
-          disabled={isJoined}
-          onClick={handleJoin}
-          className={
-            isJoined
-              ? "font-semibold md:w-6/14 bg-teal-400 text-white px-6 py-2 rounded-xl transition cursor-not-allowed"
-              : "font-semibold md:w-6/14 bg-indigo-600 text-white px-6 py-2 rounded-xl hover:bg-indigo-700 transition cursor-pointer"
-          }
-        >
-          {isJoined ? "Joined" : "Join Group"}
-        </button>
-        {isJoined && (
-          <button
-            onClick={() => {
-              setIsJoined(false);
-              toast.success("You have left the group.");
-            }}
-            className="px-6 font-semibold bg-red-500 text-white rounded-xl hover:bg-red-600 transition cursor-pointer"
-          >
-            Leave Group
-          </button>
+      {/* Buttons */}
+      <div className="mt-8 flex gap-4 justify-center md:justify-start">
+        {!mergedGroup.startDate || isPastDate(mergedGroup.startDate) ? (
+          <p className="text-red-600 font-semibold text-lg">
+            ⚠️ This group is no longer active
+          </p>
+        ) : (
+          <>
+            <button
+              disabled={isJoined}
+              onClick={handleJoin}
+              className={`px-6 py-2 rounded-xl font-semibold transition-all ${
+                isJoined
+                  ? "bg-teal-400 text-white cursor-not-allowed"
+                  : "bg-indigo-600 hover:bg-indigo-700 text-white"
+              }`}
+            >
+              {isJoined ? "Joined" : "Join Group"}
+            </button>
+
+            {isJoined && (
+              <button
+                onClick={() => {
+                  setIsJoined(false);
+                  toast.success("You have left the group.");
+                }}
+                className="px-6 py-2 rounded-xl font-semibold bg-red-500 hover:bg-red-600 text-white"
+              >
+                Leave Group
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>
   );
 };
+
+// Reusable detail row component
+const DetailRow = ({ label, value }) => (
+  <div className="flex flex-col">
+    <span className="text-sm font-semibold ">{label}</span>
+    <span className="text-base font-medium text-gray-400">
+      {value || "N/A"}
+    </span>
+  </div>
+);
 
 export default GroupDetails;

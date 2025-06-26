@@ -1,42 +1,57 @@
 import React, { useState } from "react";
-import toast from "react-hot-toast";
-import { Link } from "react-router";
+import { Link } from "react-router"; // fixed from 'react-router'
+import { FaUsers } from "react-icons/fa";
+import { MdEvent } from "react-icons/md";
 
 const GroupCard = ({ group }) => {
   const [loaded, setLoaded] = useState(false);
+
+  const { _id, groupName, image, members, startDate } = group;
+
   return (
-    <div className=" bg-gradient-to-br from-indigo-300 via-blue-200 to-red-300 p-4 rounded-xl shadow-md">
-      <div className="w-full relative overflow-hidden flex items-center justify-center">
+    <div className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-lg transition duration-300">
+      <div className="relative w-full h-48 bg-gray-200 flex items-center justify-center">
         {!loaded && (
-          <div className="absolute inset-0 flex justify-center items-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
             <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
         <img
           onLoad={() => setLoaded(true)}
-          src={group.image}
-          alt={group.groupName}
-          className="rounded-lg mb-3 md:min-h-[140px] h-[90px]"
+          src={image}
+          alt={groupName}
+          className={`w-full h-48 object-cover transition-opacity duration-500 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
         />
       </div>
-      <h3 className="font-semibold text-[15px] text-black">
-        {group.groupName}
-      </h3>
-      <p className="text-sm text-gray-600 font-semibold">Max: {group.members} members</p>
-      <p className="text-sm text-orange-500 font-semibold">
-        Next event: <span className="text-blue-500">{group.startDate}</span>
-      </p>
-      <Link to={`/group/${group._id}`}>
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="mt-4 w-full bg-blue-500 text-white py-1 rounded-full hover:bg-blue-600 cursor-pointer group"
-        >
-          See More{" "}
-          <span className="inline-block md:ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-200">
-            →
-          </span>
-        </button>
-      </Link>
+
+      <div className="p-5 space-y-2">
+        <h3 className="text-xl font-bold text-indigo-600">{groupName}</h3>
+
+        <div className="text-sm text-gray-600 flex items-center gap-1">
+          <FaUsers className="text-blue-500" />
+          Max: {members} members
+        </div>
+
+        <div className="text-sm text-gray-600 flex items-center gap-1">
+          <MdEvent className="text-orange-500" />
+          Next Event:{" "}
+          <span className="text-blue-600 font-medium">{startDate}</span>
+        </div>
+
+        <Link to={`/group/${_id}`}>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-full hover:bg-indigo-700 transition-all group"
+          >
+            See More{" "}
+            <span className="inline-block ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">
+              →
+            </span>
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

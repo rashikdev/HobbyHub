@@ -13,7 +13,7 @@
     "_id": "2",
     "groupName": "Downtown Book Club",
     "members": "500",
-    "startDate": "2025-03-22",
+    "startDate": "2025-07-22",
     "image": "https://i.postimg.cc/NGy6XhDx/2150062128.jpg",
     "hobbyCategory": "featuredGroup",
     "description": "Join lively discussions on a wide range of books with readers from all walks of life.",
@@ -64,7 +64,7 @@
     "groupName": "Mountain Photography Club",
     "image": "https://i.postimg.cc/MKfXtqf9/4697.jpg",
     "members": "800",
-    "startDate": "2025-04-01",
+    "startDate": "2025-09-01",
     "hobbyCategory": "newestGroup",
     "description": "Hike and capture breathtaking mountain landscapes with fellow photography lovers.",
     "location": "Bogura"
@@ -94,7 +94,7 @@
     "groupName": "Coastal Cleanup Volunteers",
     "image": "https://i.postimg.cc/9Qt8k4Db/2147827006.jpg",
     "members": "500",
-    "startDate": "2025-06-12",
+    "startDate": "2025-09-12",
     "hobbyCategory": "newestGroup",
     "description": "Help preserve marine life by joining our regular beach and coastline cleanup events.",
     "location": "Rangpur"

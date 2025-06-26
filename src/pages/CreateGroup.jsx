@@ -28,11 +28,11 @@ const CreateGroup = () => {
       });
   };
   return (
-    <div className="grid md:grid-cols-16 bg-gradient-to-br from-[#9b3bf5] via-orange-400 to-red-400">
-      <div className="md:col-span-7 p-6 rounded-lg text-center hidden md:block">
-        <div className="mt-50">
+    <div className="grid md:grid-cols-16">
+      <div className="md:col-span-7 rounded-lg hidden md:block">
+        <div className="mt-10">
           <h2 className="text-5xl font-bold mb-5">Create Your Group</h2>
-          <p className="mb-6 text-lg">
+          <p className="mb-6 text-gray-400">
             Start building your own community by setting your group's name,
             selecting a hobby category, and adding a description. Customize the
             details to reflect your group's purpose and vibe.

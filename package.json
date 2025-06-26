@@ -12,7 +12,10 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
     "firebase": "^11.7.3",
+    "hamburger-react": "^2.5.2",
+    "motion": "^12.19.1",
     "react": "^19.1.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.1.0",
     "react-fast-marquee": "^1.6.5",
     "react-hot-toast": "^2.5.2",
@@ -21,6 +24,7 @@
     "react-router": "^7.6.0",
     "react-simple-typewriter": "^5.0.1",
     "react-tooltip": "^5.28.1",
+    "recharts": "^3.0.0",
     "sweetalert2": "^11.21.2"
   },
   "devDependencies": {

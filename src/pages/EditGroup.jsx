@@ -27,11 +27,11 @@ const EditGroup = () => {
       });
   };
   return (
-    <div className="grid md:grid-cols-16 bg-gradient-to-br from-[#9b3bf5] via-orange-400 to-red-400">
-      <div className="md:col-span-7 p-6 rounded-lg text-center hidden md:block">
-        <div className="mt-50">
+    <div className="grid md:grid-cols-16">
+      <div className="md:col-span-7 rounded-lg hidden md:block">
+        <div className="mt-10">
           <h2 className="text-5xl font-bold mb-5">Update Your Group</h2>
-          <p className="mb-6 text-lg">
+          <p className="mb-6 text-lg text-gray-400">
             Update your community by editing the group name, changing the hobby
             category, or refreshing the description. Make adjustments to better
             reflect your group's current purpose and vibe.

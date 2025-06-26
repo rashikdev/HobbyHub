@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GrFormEdit } from "react-icons/gr";
-import { MdDeleteForever } from "react-icons/md";
+import { MdCalendarToday, MdDeleteForever } from "react-icons/md";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import nodata from "../assets/nodata.jpg";
+import { BiDetail } from "react-icons/bi";
+import { FaUsers } from "react-icons/fa";
 
 const MyGroup = () => {
-  const { user } = React.useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -24,6 +26,7 @@ const MyGroup = () => {
       });
   }, [user.email]);
 
+  console.log(groups);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -56,7 +59,7 @@ const MyGroup = () => {
   };
 
   return (
-    <div className="w-full min-h-[calc(100vh-370px)] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="w-full min-h-[calc(100vh-370px)] mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="font-bold mb-10 text-fuchsia-500 font-[Playwrite_HU] md:hidden">
         My Groups
       </h2>
@@ -83,93 +86,96 @@ const MyGroup = () => {
           </NavLink>
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-lg shadow mt-8">
-          <div className="hidden md:block">
-            <table className="min-w-full bg-gradient-to-br from-orange-400 via-blue-200 to-red-200 text-sm sm:text-base text-left text-gray-700">
-              <thead className="font-semibold">
-                <tr className="">
-                  <th className="px-6 py-3">Group Name</th>
-                  <th className="px-6 py-3">Description</th>
-                  <th className="px-6 py-3">Meeting Location</th>
-                  <th className="px-6 py-3">Members</th>
-                  <th className="px-6 py-3">Start Date</th>
-                  <th className="pl-9 py-3">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {groups.map((group, index) => (
-                  <tr key={index} className="border-t transition-colors">
-                    <td className="px-6 py-4 font-medium">{group.groupName}</td>
-                    <td className="px-6 py-4 text-blue-600 md:w-[300px]">
-                      {group.description}
-                    </td>
-                    <td className="px-6 py-4">{group.location}</td>
-                    <td className="px-6 py-4">{group.members}</td>
-                    <td className="px-6 py-4">{group.startDate}</td>
-                    <td className="">
-                      <Link
-                        to={`/updateGroup/${group._id}`}
-                        className="px-6"
-                      >
-                        <button className="cursor-pointer hover:text-red-500 text-blue-600 hover:bg-blue-300 rounded-full transition-all duration-200 p-1">
-                          <GrFormEdit size={25} />
-                        </button>
-                      </Link>
-                      <button
-                        onClick={() => handleDelete(group._id)}
-                        className="cursor-pointer hover:bg-red-400 text-red-600 hover:text-white rounded-full  transition-all duration-200 p-1"
-                      >
-                        <MdDeleteForever size={24} />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="md:hidden text-black flex flex-col gap-4">
+        <div className="overflow-x-auto rounded-lg mt-8">
+          <div className="text-black grid grid-cols-1 md:grid-cols-3 gap-4">
             {groups.map((group, index) => (
               <div
                 key={index}
-                className="bg-white p-4 border rounded-lg shadow-sm flex flex-col gap-2 bg-gradient-to-br from-orange-400 via-blue-200 to-red-200"
+                className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-lg transition duration-300 m-1"
               >
-                <div className="flex justify-between">
-                  <span className="font-semibold">Group Name:</span>
-                  <span>{group.groupName}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-semibold">Description:</span>
-                  <span className="text-blue-600 w-[200px] text-right">
-                    {group.description}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-semibold">Location:</span>
-                  <span>{group.location}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-semibold">Members:</span>
-                  <span>{group.members}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-semibold">Start Date:</span>
-                  <span>{group.startDate}</span>
-                </div>
-                <div className="flex justify-end space-x-5 pt-2">
-                  <Link to={`/updateGroup/${group._id}`}>
-                    <GrFormEdit
-                      className="cursor-pointer text-blue-600"
-                      size={25}
-                    />
-                  </Link>
-                  <MdDeleteForever
-                    className="cursor-pointer"
-                    onClick={() => handleDelete(group._id)}
-                    size={24}
-                    color="red"
-                  />
+                <img
+                  src={group.image}
+                  alt="Group Image"
+                  className="w-full h-48 object-cover"
+                />
+
+                <div className="p-5 space-y-3">
+                  <h3 className="text-xl font-bold text-indigo-600">
+                    {group.groupName}
+                  </h3>
+
+                  <div className="flex justify-between items-center text-sm text-gray-500 mt-2">
+                    <span className="flex items-center gap-1">
+                      <FaUsers className="text-indigo-500" /> {group.members}{" "}
+                      Members
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <MdCalendarToday className="text-indigo-500" />
+                      {new Date(group.startDate).toLocaleDateString()}
+                    </span>
+                  </div>
+
+                  <div className="mt-4 flex gap-2">
+                    <Link
+                      to={`/group/${group._id}`}
+                      className="px-3 py-1 rounded-md text-sm bg-indigo-600 text-white hover:bg-indigo-700"
+                    >
+                      View
+                    </Link>
+                    <Link
+                      to={`/dashboard/updateGroup/${group._id}`}
+                      className="px-3 py-1 rounded-md text-sm bg-yellow-500 text-white hover:bg-yellow-600"
+                    >
+                      Edit
+                    </Link>
+                    <button
+                      onClick={() => handleDelete(group._id)}
+                      className="px-3 py-1 rounded-md text-sm bg-red-500 text-white hover:bg-red-600"
+                    >
+                      Delete
+                    </button>
+                    {/* Optional delete button */}
+                    {/* <button className="px-3 py-1 rounded-md text-sm bg-red-500 text-white hover:bg-red-600">Delete</button> */}
+                  </div>
                 </div>
               </div>
+              // <div
+              //   key={index}
+              //   className="bg-white p-4 border rounded-lg shadow-sm flex flex-col gap-2 bg-gradient-to-br from-orange-400 via-blue-200 to-red-200"
+              // >
+              //   <div className="flex justify-between">
+              //     <span className="font-semibold">Group Name:</span>
+              //     <span>{group.groupName}</span>
+              //   </div>
+              //   <div className="flex justify-between">
+              //     <span className="font-semibold">Location:</span>
+              //     <span>{group.location}</span>
+              //   </div>
+              //   <div className="flex justify-between">
+              //     <span className="font-semibold">Start Date:</span>
+              //     <span>{group.startDate}</span>
+              //   </div>
+              //   <div className="flex justify-end space-x-5 pt-2">
+              //     <Link to={`/dashboard/group/${group._id}`}>
+              //       <BiDetail
+              //         className="cursor-pointer text-blue-600"
+              //         size={25}
+              //       />
+              //     </Link>
+              //     <Link to={`/dashboard/updateGroup/${group._id}`}>
+              //       <GrFormEdit
+              //         className="cursor-pointer text-blue-600"
+              //         size={25}
+              //       />
+              //     </Link>
+              //     <MdDeleteForever
+              //       className="cursor-pointer"
+              //       onClick={() => handleDelete(group._id)}
+              //       size={24}
+              //       color="red"
+              //     />
+              //   </div>
+              // </div>
             ))}
           </div>
         </div>
