@@ -14,26 +14,26 @@ const CreateGroup = () => {
     const newGroup = Object.fromEntries(formData.entries());
     const group = { ...newGroup, groupType: "newestGroup" };
     console.log(group);
-    // fetch("https://hobby-hub-server-ashen.vercel.app/groups", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(group),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.insertedId) {
-    //       toast.success("Group created successfully");
-    //       form.reset();
-    //     }
-    //   });
+    fetch("https://hobby-hub-server-ashen.vercel.app/groups", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(group),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Group created successfully");
+          form.reset();
+        }
+      });
   };
   return (
     <div className="grid md:grid-cols-16">
       <div className="md:col-span-7 rounded-lg hidden md:block">
         <div className="mt-10">
-          <h2 className="text-5xl font-bold mb-5">Create Your Group</h2>
+          <h2 className="text-5xl font-bold mb-5 ">Create Your Group</h2>
           <p className="mb-6 text-gray-400">
             Start building your own community by setting your group's name,
             selecting a hobby category, and adding a description. Customize the

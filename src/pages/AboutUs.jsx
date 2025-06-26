@@ -24,7 +24,7 @@ const AboutUs = () => {
   return (
     <div className="min-h-[calc(100vh-377px)] px-4 py-12 max-w-5xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-extrabold mb-4">About HobbyHub</h2>
+        <h2 className="text-4xl font-extrabold mb-4 text-[#1307fd]">About HobbyHub</h2>
         <p className="text-lg text-gray-500">
           Connecting passionate people through hobbies and creativity.
         </p>
