@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaEnvelope, FaUserAlt, FaUserTag } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 
 const UserInfoCard = () => {
   const { user, logoutUser } = useAuth();
@@ -13,7 +14,12 @@ const UserInfoCard = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="rounded-xl p-2 flex items-center md:gap-6 gap-3 relative">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="rounded-xl p-2 flex items-center md:gap-6 gap-3 relative"
+    >
       {/* Avatar */}
       <div>
         <img
@@ -52,7 +58,7 @@ const UserInfoCard = () => {
           Logout
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
