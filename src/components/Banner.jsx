@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Banner = () => {
   return (
     <div className="bg-gradient-to-br from-indigo-100 via-blue-50 to-pink-100 w-11/12 mx-auto mt-8 rounded-md">
-      <div className="max-w-6xl mx-auto px-4 py-20 flex flex-col-reverse md:flex-row items-center gap-10">
+      <div className="max-w-6xl mx-auto px-4 py-5 md:py-20 flex flex-col-reverse md:flex-row items-center gap-10">
         {/* Text Section */}
         <div className="flex-1 text-center md:text-left">
           <motion.h1
@@ -46,7 +46,7 @@ const Banner = () => {
             }}
             src="https://i.postimg.cc/d3KCDNcP/Adobe-Express-file.png"
             alt="Hobby illustration"
-            className="w-full max-w-md mx-auto drop-shadow-lg"
+            className="md:w-full w-[60%] max-w-md mx-auto drop-shadow-lg"
           />
         </div>
       </div>
