@@ -125,7 +125,7 @@ const DashboardLayout = () => {
           </div>
           <div className="absolute bottom-4 md:right-5 right-30">
             <li className="menu py-0 text-xl">
-              <NavLink to="/dashboard/profile" className="bg-gray-300 px-8">
+              <NavLink to="/dashboard/profile" className="outline outline-blue-600 px-8">
                 <FaUserEdit /> My Profile
               </NavLink>
             </li>

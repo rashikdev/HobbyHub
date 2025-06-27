@@ -13,7 +13,7 @@ const UserInfoCard = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="rounded-xl shadow-lg p-2 flex items-center md:gap-6 gap-3 relative">
+    <div className="rounded-xl p-2 flex items-center md:gap-6 gap-3 relative">
       {/* Avatar */}
       <div>
         <img
