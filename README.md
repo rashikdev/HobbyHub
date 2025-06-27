@@ -1,12 +1,12 @@
 # 🎨 HobbyHub
 
-**HobbyHub**  is a platform where people can discover and join local hobby-based groups (e.g., book clubs, hiking crews, painting circles) or create their own. It encourages social engagement through shared interests, helping people build communities around their passions.
+**HobbyHub** is a platform where people can discover and join local hobby-based groups (e.g., book clubs, hiking crews, painting circles) or create their own. It encourages social engagement through shared interests, helping people build communities around their passions.
 
 ![HobbyHub Banner](./src/assets/preview.png)
 
 ---
- **Live Site:** [HobbyHub](https://hobby-hub-a8201.web.app/)
----
+
+## **Live Site:** [HobbyHub](https://hobby-hub-a8201.web.app/)
 
 ## 🚀 Features
 
@@ -83,5 +83,4 @@ npm run dev
 ## 🙌 Author
 
 Made with ❤️ by **[Md. Rahsik]**  
-📧 Email: mdrashikpdf@gmail.com 
-
+📧 Email: mdrashikpdf@gmail.com
